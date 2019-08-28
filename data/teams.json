@@ -1,0 +1,329 @@
+[
+	{
+		"TeamId": 1,
+		"TeamName": "Justice League",
+		"League": "Superheroes",
+		"ManagerName": "Superman",
+		"ManagerPhone": "REDACTED",
+		"ManagerEmail": "superman@aol.com",
+		"MaxTeamMembers": 7,
+		"MinMemberAge": 0,
+		"MaxMemberAge": 999,
+		"TeamGender": "Any",
+		"Members": [
+			{
+				"MemberId": 1,
+				"Email": "superman@aol.com",
+				"MemberName": "Superman",
+				"ContactName": "Lois Lane",
+				"SecretIdentity": "Clark Kent",
+				"Age": 60,
+				"Gender": "Male",
+				"Phone": "REDACTED",
+				"Image": "supermanflying.png",
+				"SuperPowers": [
+					"Superhuman Strength",
+					"Superhuman Vision",
+					"Superhuman Breath",
+					"Superhuman Speed",
+					"Invulnerability",
+					"Healing Factor",
+					"Flight"
+				],
+				"Abilities": [
+					"None"
+				],
+				"Gear":[
+					"Superman's Uniform"
+				]
+			},
+			{
+				"MemberId": 2,
+				"Email": "bgatemca@aol.com",
+				"MemberName": "Batman",
+				"ContactName": "Alfred Pennyworth",
+				"SecretIdentity": "Bruce Wayne",
+				"Age": 63,
+				"Gender": "Male",
+				"Phone": "REDACTED",
+				"Image": "batman.png",
+				"SuperPowers": [
+					"None"
+				],
+				"Abilities": [
+					"Genius-level Intellect",
+					"Expert Detective",
+					"Indomitable Will",
+					"Peak Human Condition",
+					"Master Martial Artist and Hand-to-Hand Combatant",
+					"Utilizes high-tech equipment"
+				],
+				"Gear":[
+					"Batsuit",
+					"Batmobile",
+					"Utility Belt",
+					"Bat-Signal",
+					"Batcave"
+				]
+			},
+			{
+				"MemberId": 3,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Wonder Woman",
+				"ContactName": "Diana Prince",
+				"SecretIdentity": "Diana Prince",
+				"Age": 10,
+				"Gender": "Female",
+				"Phone": "REDACTED",
+				"Image": "wonder_woman.png",
+				"SuperPowers": [
+					"Superhuman Strength",
+					"Immortality",
+					"Master hand-to-hand combatant",
+					"Invulnerability",
+					"Healing Factor",
+					"Flight"
+				],
+				"Abilities": [
+					"None"
+				],
+				"Gear": [
+					"Lasso of Truth", 
+					"Indestructible bracelets", 
+					"Projectile Tiara", 
+					"Sword", 
+					"Shield", 
+					"Invisible Jet"
+				]
+			},
+			{
+				"MemberId": 4,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "The Flash",
+				"ContactName": "Iris",
+				"SecretIdentity": "Bartholomew 'Barry' Henry Allen",
+				"Age": 10,
+				"Gender": "Male",
+				"Phone": "REDACTED",
+				"Image": "flash.png",
+				"SuperPowers": [
+					"Ability to move, think and react at immense super-human speeds",
+					"Superhuman levels of stamina, speed, reflexes, agility, endurance and strength",
+					"Intangibility through molecular vibration at high velocity",
+					"Speed Reading",
+					"Ability to travel through time and various alternate dimensions by running faster than the speed of light"
+				],
+				"Abilities": [
+					"None"
+				],
+				"Gear": [
+					"None"
+				]
+			},
+			{
+				"MemberId": 5,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Green Lantern",
+				"ContactName": "Hal Jordan",
+				"SecretIdentity": "Hal Jordan",
+				"Age": 10,
+				"Gender": "Male",
+				"Phone": "REDACTED",
+				"Image": "green_lantern.png",
+				"SuperPowers": [
+					"Use of power ring",
+					"Flight",
+					"Force field"
+				],
+				"Abilities": [
+					"Trained aircraft pilot"
+				],
+				"Gear": [
+					"Uniform"
+				]
+			},
+			{
+				"MemberId": 6,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Aquaman",
+				"ContactName": "Arthur Curry",
+				"SecretIdentity": "Arthur Curry",
+				"Age": 10,
+				"Gender": "Male",
+				"Phone": "REDACTED",
+				"Image": "aquaman.png",
+				"SuperPowers": [
+					"Telepathic control of all aquatic life",
+					"Superhuman Strength",
+					"Accelerated healing",
+					"Super-fast swimming"
+				],
+				"Abilities": [
+					"None"
+				],
+				"Gear": [
+					"Trident of Poseidon"
+				]
+			},
+			{
+				"MemberId": 7,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Martian Manhunter",
+				"ContactName": "J'onn J'onzz",
+				"SecretIdentity": "John Jones",
+				"Age": 10,
+				"Gender": "Male",
+				"Phone": "REDACTED",
+				"Image": "Martian_Manhunter.png",
+				"SuperPowers": [
+					"Superhuman endurance",
+					"Superhuman Strength",
+					"Superhuman Speed",
+					"Shapeshifting",
+					"Invisibility",
+					"Flight"
+				],
+				"Abilities": [
+					"Genius-level intellect",
+					"Photographic memory"
+				],
+				"Gear": [
+					"None"
+				]
+			}
+		]
+	},
+	{
+		"TeamId": 2,
+		"TeamName": "X-Men",
+		"League": "Superheroes",
+		"ManagerName": "Professor Charles Francis Xavier",
+		"ManagerPhone": "817-555-5454",
+		"ManagerEmail": "Natalie214@aol.com",
+		"MinAge": 0,
+		"MaxAge": 17,
+		"MaxTeamMembers": 6,
+		"TeamGender": "Any",
+		"Members": [
+			{
+				"MemberId": 8,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Wolverine",
+				"ContactName": "James 'Logan' Howlett",
+				"SecretIdentity": "James 'Logan' Howlett",
+				"Age": 10,
+				"Gender": "Male",
+				"Phone": "817-555-5454",
+				"Image": "wolverine.png",
+				"SuperPowers": [
+					"Superhuman Senses",
+					"regenerative healing factor",
+					"Adamantium-infused skeleton",
+					"Retractable Adamantium claws",
+					"Skilled hand-to-hand combatant"
+				],
+				"Abilities": [
+					"animal-like attributes"
+				],
+				"Gear": [
+					"None"
+				]
+			},
+			{
+				"MemberId": 9,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Cyclops",
+				"ContactName": "Scott Summers",
+				"Age": 15,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 10,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Beast",
+				"ContactName": "Henry Philip 'Hank' McCoy",
+				"Age": 15,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 11,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Marvel Girl / Phoenix",
+				"ContactName": "Jean Elaine Grey-Summers",
+				"Age": 15,
+				"Gender": "Female",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 12,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Iceman",
+				"ContactName": "Robert Louis 'Bobby' Drake",
+				"Age": 15,
+				"Gender": "Female",
+				"Phone": "817-555-5454"
+			}
+		]
+	},
+	{
+		"TeamId": 2,
+		"TeamName": "Avengers",
+		"League": "Superheroes",
+		"ManagerName": "Nick Fury",
+		"ManagerPhone": "817-555-5454",
+		"ManagerEmail": "NFury214@aol.com",
+		"MinAge": 0,
+		"MaxAge": 17,
+		"MaxTeamMembers": 6,
+		"TeamGender": "Any",
+		"Members": [
+			{
+				"MemberId": 8,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Iron Man",
+				"ContactName": "Anthony Edward 'Tony' Stark",
+				"Age": 10,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 9,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Thor",
+				"ContactName": "Thor Odinson",
+				"Age": 15,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 10,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Ant-Man",
+				"ContactName": "Henry Jonathan 'Hank' Pym",
+				"Age": 15,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 11,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Hulk",
+				"ContactName": "Dr. Robert Bruce Banner",
+				"Age": 15,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			},
+			{
+				"MemberId": 12,
+				"Email": "Natalie214@aol.com",
+				"MemberName": "Captain America",
+				"ContactName": "Steven 'Steve' Rogers",
+				"Age": 15,
+				"Gender": "Male",
+				"Phone": "817-555-5454"
+			}
+		]
+	}
+]

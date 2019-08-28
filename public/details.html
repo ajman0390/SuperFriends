@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Added CSS file-->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="img/teach-icon.png" />
+  <title>Explore The Outdoors</title>
+</head>
+
+<body>
+
+  <!-- Start of Nav -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+      aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="courses.html">Courses</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- End of Nav -->
+  </nav>
+
+  <!-- Main jumbotron -->
+  <header>
+
+    <div class="container">
+      <div class="py-3"><br /></div>
+      <div class="jumbotron text-white rounded shadow">
+        <div class="text-center" id="jumboText">
+          <h1 class="display-4 font-italic">Explore The Team</h1>
+          <p class="lead my-3 pTop">Team</p>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="container ">
+
+    <div class="shadow-lg p-3 mb-5" id="searchForm">
+
+      <!-- Message at top of Table -->
+      <h3>Team Detials</h3>
+      <small>More info on the Team.</small>
+      <hr />
+
+      <!-- Team Info Card Secton -->
+    <section class="container hidden" id="teamCardContainer">
+            <div class="row">
+              <!-- <div class="offset-md-1 col-md-5">
+                <h2 id="teamName">&nbsp;</h2>
+                <ul id="servicesList" class="list-group"></ul>
+              </div> -->
+      
+              <!-- Start of Card -->
+              <div class="offset-md-2 col-md-3 flipper" id="cardDiv">
+                <div class="card hidden" id="teamCard">
+                  <div class="card-body">
+                    <!-- Front face of card -->
+                    <div class="front"> 
+                        <h3 class="card-title" id="cardFront">&nbsp;</h3>
+                      <p>
+                        <img class="card-img-top img-fluid" id="cardImg" src="#" alt="#">
+                      </p>
+                      <small>(Flip over for more details)</small>
+                    </div>
+      
+                    <!-- Back face of card -->
+                    <div class="back">
+                      <h4 class="card-title" id="cardTitle">&nbsp;</h4>
+                      <h6 class="card-subtitle mb-2 text-muted" id="cardTime">&nbsp;</h6>
+                      <p class="card-text" id="cardText1">&nbsp;</p>
+                      <p class="card-text" id="cardText2">&nbsp;</p>
+                    </div>
+                  </div> <!-- /cardbody -->
+                </div>
+              </div> <!-- /Card -->
+            </div>
+          </section>
+
+
+
+      <!-- Table for displaying details on searched courses -->
+      <div class="container col-md-8" id="bottomDiv">
+        <table class="table table-striped table-hover table-bordered" id="courseDetailTable">
+          <tbody id="tblbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Message at top of Table -->
+      <h3>Team Members</h3>
+      <div class="row">
+
+        <!-- Form Add and Reset Btns -->
+        <div class="text-left col" id="regDiv">
+        </div>
+        <hr />
+      </div>
+      
+      <!-- Table for displaying students -->
+      <div class="container col-md-6" id="studentDisplayDiv">
+        <table class="table table-striped table-hover table-bordered" id="studentTable">
+          <tbody id="tblbodyStudent"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </main> <!-- /container -->
+
+
+  <footer class="container">
+    <hr />
+    <p>&copy; Adam Jacobs - HartCode Academy 2019</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="scripts/details.js"></script>
+</body>
+
+</html>

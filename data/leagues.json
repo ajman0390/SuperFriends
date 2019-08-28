@@ -1,0 +1,22 @@
+[
+	{
+		"Name": "Superheroes",
+		"Code": "Superheroes",
+		"Description": "This league consists of Superheroes"
+	},
+	{
+		"Name": "Villains",
+		"Code": "Villains",
+		"Description": "This league consists of Villains"
+	},
+	{
+		"Name": "Heroes",
+		"Code": "Non-Supers",
+		"Description": "This league consists Heroes who do not have any superpowers"
+    },
+    {
+		"Name": "Young Heroes",
+		"Code": "Lil-Supers",
+		"Description": "This league consists young Heroes who are under 20 years old"
+	}
+]
