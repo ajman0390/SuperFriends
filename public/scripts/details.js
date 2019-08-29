@@ -4,40 +4,41 @@ $(function () {
     let urlParams = new URLSearchParams(location.search);
     let TeamId = urlParams.get("TeamId");
 
-    let courseObjs;
+    let teamObj;
     $.getJSON("/api/teams/" + TeamId,
         function (data) {
-            courseObjs = data;
-            
-            createDetailsTable(courseObjs, TeamId);
-            createStudentTable(courseObjs, TeamId);            
+            teamObj = data;
+
+            createTeamDetailsCard(teamObj, TeamId);
+            createStudentTable(teamObj, TeamId);
+
         })
 })
 
-function createTeamDetailsCard(serviceId) {
-    $.getJSON(`/api/teams/${serviceId}`, function (team) {
-        $('#cardImg').attr('src', 'img/' + team.Image );
-        $('#cardImg').attr('alt', team.ServiceName + 'Image' );
-        $('#cardFront').html(team.ServiceName);
-        $('#cardTitle').html(team.ServiceName); 
-        $('#cardTime').html('(' + team.Minutes + ' Minutes)'); 
-        $('#cardText1').html(team.Description);
-        $('#cardText2').html('$' + Number(team.Price).toFixed(2));
-        $('#serviceCard').delay('10').fadeIn();
-    })
+function createTeamDetailsCard(teamObj, TeamId) {
+
+    $('#cardImg').attr('src', 'img/' + teamObj.Image);
+    $('#cardImg').attr('alt', teamObj.TeamName + 'Image');
+    $('#cardFront').html(teamObj.TeamName);
+    $('#cardTitle').html(teamObj.TeamName);
+    $('#cardTime').html(teamObj.League);
+    $('#cardText1').html(teamObj.ManagerName);
+    $('#cardText2').html(teamObj.MaxTeamMembers);
+    $('#serviceCard').delay('10').fadeIn();
+
 }
 
-function createDetailsTable(courseObjs, TeamId) {
+function createDetailsTable(teamObjs, TeamId) {
 
     // create rows
-    createRow("Team ID", courseObjs.TeamId);
-    createRow("Team Name", courseObjs.TeamName);
-    createRow("Team League", courseObjs.League);
-    createRow("Team Max TeamMembers", courseObjs.MaxTeamMembers);
-    createRow("Team Min Age", courseObjs.MinMemberAge);
-    createRow("Team Max Age", courseObjs.MaxMemberAge);
-    createRow("Team Gender", courseObjs.TeamGender);
-    //createRow("Team Location", courseObjs.Location);
+    createRow("Team ID", teamObjs.TeamId);
+    createRow("Team Name", teamObjs.TeamName);
+    createRow("Team League", teamObjs.League);
+    createRow("Team Max TeamMembers", teamObjs.MaxTeamMembers);
+    createRow("Team Min Age", teamObjs.MinMemberAge);
+    createRow("Team Max Age", teamObjs.MaxMemberAge);
+    createRow("Team Gender", teamObjs.TeamGender);
+    //createRow("Team Location", teamObjs.Location);
 
     // create Details Link
     let regLink = "<a href='register.html?TeamId=" +
@@ -46,12 +47,13 @@ function createDetailsTable(courseObjs, TeamId) {
     $("#regDiv").append(regLink);
 }
 
-function createStudentTable(courseObjs, TeamId) {
+function createStudentTable(teamObjs, TeamId) {
     // create Student Table
-    let teamMembersLen = courseObjs.Members.length;
+    let teamMembersLen = teamObjs.Members.length;
     if (teamMembersLen > 0) {
         for (let i = 0; i < teamMembersLen; i++) {
-            createStudentRow(courseObjs.Members[i].MemberName, courseObjs.Members[i].SecretIdentity, TeamId);
+            createStudentRow(teamObjs.Members[i].MemberName, teamObjs.Members[i].SecretIdentity, TeamId);
+            createMemberCard(teamObjs.Members[i], TeamId);
         }
     }
 }
@@ -72,4 +74,28 @@ function createStudentRow(title, value, TeamId) {
     uri = encodeURI(uri);
     let studentRow = '<tr><td class="titleTbl">' + title + '</td><td>' + value + '</td><td><div class="text-center"><a href="' + uri + '"id="unregBtn" class="btn btn-danger btn-sm">Unregister</a></div></td></tr>';
     $("#tblbodyStudent").append(studentRow);
+}
+
+function createMemberCard(teamMember, TeamId) {
+    let memberCard = `
+    <div class="col-md-4" >
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-center">${teamMember.MemberName}</h3>
+            
+                <img class="card-img-top memberImgs" id="card${teamMember.MemberName}Img" src="img/${teamMember.Image}" alt="${teamMember.MemberName} Image">
+                <p class="card-text">${teamMember.Description}</p>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                </div>
+              
+            </div>
+        </div>
+    </div>`;
+    $("#memberCardDiv").append(memberCard);
 }

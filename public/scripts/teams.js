@@ -61,7 +61,7 @@ $("#showAllBtn").on("click", function () {
 */
 function createRow(teamObjs) {
     let tableRow =
-        "<tr><td>" +
+        "<tr data-toggle='popover' title='" + teamObjs.TeamName + "'><td>" +
         teamObjs.TeamName +
         "</td><td>" +
         teamObjs.ManagerName +
@@ -78,4 +78,12 @@ $("#resetBtn").on("click", function () {
     clearTable();
     $("#courseSearchTable").hide();
     $("#inputTeamDropdown").val("zero");
+});
+
+// Popovers
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top',
+        trigger : 'hover'
+    });
 });
