@@ -12,6 +12,7 @@
 
     <!-- Added CSS file-->
     <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/flip.css">  -->
 
     <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
@@ -88,6 +89,15 @@
                                     <h6 class="card-subtitle mb-2 text-muted" id="cardTime">&nbsp;</h6>
                                     <p class="card-text" id="cardText1">&nbsp;</p>
                                     <p class="card-text" id="cardText2">&nbsp;</p>
+
+                                    <div class="card-bottom d-flex justify-content-between align-items-center">
+                                        <div class="btn-group" id="editBtnArea">
+                                            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+
+                                        </div>
+                                        <small class="text-muted">Text</small>
+                                    </div>
+
                                 </div>
                             </div> <!-- /cardbody -->
                         </div>
@@ -106,13 +116,14 @@
 
             <!-- Message at top of Table -->
             <h3>Team Members</h3>
-            <div class="row">
+            <!-- Form Add and Reset Btns -->
+            <!-- <div class="row">
 
-                <!-- Form Add and Reset Btns -->
+                
                 <div class="text-left col" id="regDiv">
                 </div>
                 <hr />
-            </div>
+            </div> -->
 
             <!-- Table for displaying students -->
             <div class="container col-md-8" id="studentDisplayDiv">
@@ -122,16 +133,13 @@
             </div>
 
             <!-- Card for displaying students -->
-            <div class="album py-5">
+            <div class="album py-5 ">
                 <div class="container">
                     <div class="row" id="memberCardDiv">
-                        </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
-
-
 
     </main> <!-- /container -->
 
@@ -148,6 +156,7 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="scripts/details.js"></script>
+
 </body>
 
 </html>

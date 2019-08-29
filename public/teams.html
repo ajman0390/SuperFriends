@@ -71,7 +71,7 @@
         <div class="input-group">
           <label class="col-sm-2 col-form-label" for="inputTeamDropdown">Search Heroes</label>
           <div class="col-md-4">
-            <select class="custom-select" id="inputTeamDropdown" aria-label="Teams Dropdown">
+            <select class="form-control" id="inputTeamDropdown" name="inputTeamDropdown" aria-label="Teams Dropdown">
               <option value="zero" selected>Select One...</option>
             </select>
           </div>
@@ -84,6 +84,15 @@
         </div>
       </div>
 
+      <div class="form-group row">
+      <label for="Age" class="col-sm-2 col-form-label">Age</label>
+    <div class="col-md-3">
+      <select class="form-control" id="Age" name="Age">
+        <option value="zero">Select Your Age</option>
+      </select>
+    </div>
+  </div>
+
       <!-- Table for displaying searched courses -->
       <div class="container col-md-8" id="bottomDiv">
         <table class="table table-striped table-hover table-bordered" id="courseSearchTable">
@@ -92,6 +101,7 @@
               <th>Team Name</th>
               <th>Team Manager</th>
               <th>Details</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody id="tblbody"></tbody>

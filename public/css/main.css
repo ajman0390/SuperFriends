@@ -103,7 +103,7 @@ footer p {
 }
 
 /* Flip the pane when hovered, Add a hover effect (blue/grey shadow) */
-#cardDiv:hover .card {
+.flipped, #cardDiv:hover .card {
     transform: rotateY(180deg);
     box-shadow: 0 0 15px 1px rgba(10, 44, 53, 0.884);
 }
@@ -113,7 +113,6 @@ footer p {
     padding: 15px;
     position: absolute;
     backface-visibility: hidden;
-    
     top: 0;
     left: 0;
 }
@@ -140,6 +139,19 @@ footer p {
     height: 25.5rem;
 }
 
+#membercard {
+    height: 830px;
+}
+.card-bottom {
+    bottom: 5px;
+    position:absolute; 
+    width:90%;
+}
+.card-text {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
 /* Do not display Card Imgs for smaller screens and add left margin */
 @media only screen and (max-width: 767px) {
     /* #cardImg {
@@ -151,3 +163,4 @@ footer p {
         width: 12em;
     }
 }
+

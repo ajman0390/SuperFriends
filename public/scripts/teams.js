@@ -12,6 +12,12 @@ $(function () {
                 $("#inputTeamDropdown").append("<option value='" + leagueObjs[i].Code + "'>" + leagueObjs[i].Name + "</option>")
             }
 
+            // Age Dropdown
+            for (let i = 1; i < 101; i++) {
+                let newOption = $("<option>", { value: i, text: i });
+                $("#Age").append(newOption);
+            }
+
             $("#inputTeamDropdown").on("change", function () {
                 if ($("#inputTeamDropdown").val() == "zero") {
                     clearTable();
@@ -71,19 +77,20 @@ function createRow(teamObjs) {
         "'>Details</a></td></tr>";
     $("#tblbody").append(tableRow);
     $("#courseSearchTable").show();
-}; ;
+};;
 
 // Reset Btn
 $("#resetBtn").on("click", function () {
     clearTable();
     $("#courseSearchTable").hide();
     $("#inputTeamDropdown").val("zero");
+    $("#Age").val("zero");
 });
 
 // Popovers
-$(document).ready(function(){
+$(document).ready(function () {
     $('[data-toggle="popover"]').popover({
-        placement : 'top',
-        trigger : 'hover'
+        placement: 'top',
+        trigger: 'hover'
     });
 });
