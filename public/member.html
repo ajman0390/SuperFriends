@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Added CSS file-->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Google fonts stylesheet -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="img/teach-icon.png" />
+  <title>Register for Courses</title>
+</head>
+
+<body>
+  <!-- Start of Nav -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+      aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="courses.html">Courses</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- End of Nav -->
+  </nav>
+
+  <!-- Main jumbotron -->
+  <header>
+    <div class="container">
+      <div class="py-3"><br /></div>
+      <div class="jumbotron text-white rounded shadow">
+        <div class="text-center" id="jumboText">
+          <h1 class="display-4 font-italic">Register for Courses</h1>
+          <p class="lead my-3 pTop">Register for Courses.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="col-md-6 offset-md-3 ">
+      <h2>Edit Member</h2>
+
+      <!-- Beginning of Registration Form -->
+      <!-- <form class="form-signin" action="#" method="POST"> -->
+      <form action="#" id="studentForm">
+
+        <!-- Course ID -->
+        <div class="form-group row">
+          <div class="col">
+            <label for="teamId">Team ID: </label>
+            <input type="text" class="form-control" name="courseid" id="teamId" placeholder="TeamID" readonly>
+          </div>
+        </div>
+
+        <!-- Add Student inputs -->
+        <div class="form-group row">
+          <div class="col">
+            <label for="membername">Member Name</label>
+            <input type="text" class="form-control" id="membername" name="membername" placeholder="Member Name"
+              autofocus minlength="2" maxlength="35">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="row">
+            <div class="text-left col">
+                <p id="errorMsg"></p>
+              </div>
+          <!-- Form Add and Reset Btns -->
+          <div class="text-right col">
+            <button type="button" class="btn btn-outline-success" name="regBtn" id="regBtn">Register</button>
+            <button type="button" class="btn btn-outline-danger" id="resetBtn">Reset</button>
+            <button type="button" class="btn btn-outline-warning" id="cancelBtn">Cancel</button>
+          </div>
+        </div>
+
+      </form>
+      <!-- End of Registration Form -->
+
+    </article>
+
+  </main>
+
+  <footer class="container">
+    <hr />
+    <p>&copy; Adam Jacobs - HartCode Academy 2019</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="scripts/member.js"></script>
+</body>
+
+</html>

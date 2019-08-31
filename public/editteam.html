@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Added CSS file-->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/instructor.css">
+
+  <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="img/teach-icon.png" />
+  <title>Explore The Outdoors</title>
+</head>
+
+<body>
+
+  <!-- Start of Nav -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+      aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="instructor.html">Instructor</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+
+      </ul>
+    </div>
+    <!-- End of Nav -->
+  </nav>
+
+  <!-- Main jumbotron -->
+  <header>
+
+    <div class="container">
+      <div class="py-3"><br /></div>
+      <div class="jumbotron text-white rounded shadow">
+        <div class="text-center" id="jumboText">
+          <h1 class="display-4 font-italic">Explore The Course</h1>
+          <p class="lead my-3 pTop">Course</p>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="container ">
+
+    <form class="shadow-lg p-3 mb-5" id="editCourseForm">
+
+      <!-- Message at top of Table -->
+      <h3>Edit Course Detials</h3>
+      <small>Edit info on the Course.</small>
+      <hr />
+
+        <div class="form-group row">
+          <label for="TeamId" class="col-sm-2 col-form-label">Course ID</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="TeamId" name="TeamId" placeholder="Course  ID" readonly>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="courseCategory">Select a Course</label>
+          <div class="col-md-4">
+            <!-- <select class="custom-select" id="editCourseCategory" name="category">
+              <option value="zero" selected>Select One...</option>
+            </select> -->
+            
+              <input type="text" class="form-control" id="courseCategory" name="category" placeholder="Course Category" readonly>
+            
+          </div>
+            
+          
+        </div>
+
+        <div class="form-group row">
+            <label for="newCourseTitle" class="col-sm-2 col-form-label">Course Name</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="courseTitle" name="title" placeholder="Course Name">
+            </div>
+            <label for="courseFee" class="col-sm-2 col-form-label">Course Fee</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="courseFee" placeholder="Fee" name="fee">
+          </div>
+          
+        </div>
+
+        <div class="form-group row">
+          <label for="courseStartDate" class="col-sm-2 col-form-label">Start Date</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="courseStartDate" placeholder="Start Date" name="startdate">
+          </div>
+          <label for="courseEndDate" class="col-sm-2 col-form-label">End Date</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="courseEndDate" placeholder="End Date" name="enddate">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="courseMeets" class="col-sm-2 col-form-label">Course Meets</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="courseMeets" placeholder="Course Meets" name="meets">
+          </div>
+          <label for="courseLocation" class="col-sm-2 col-form-label">Course Location</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="courseLocation" placeholder="Location" name="location">
+          </div>
+        </div>
+
+      <!-- Form Add and Reset Btns -->
+        <div class="text-center col">
+            <button type="button" class="btn btn-outline-primary btn-lg" name="updateCourseBtn" id="updateCourseBtn">Update Course</button> 
+            <button type="button" class="btn btn-outline-danger btn-lg" id="resetBtn">Reset</button>
+            <button type="button" class="btn btn-outline-warning btn-lg" id="cancelAddCourseBtn">Cancel</button>
+          </div>
+        <hr />
+      </div>
+
+      <!-- Message at top of Table -->
+      <h3>Students</h3>
+      <div class="row">
+      
+      <!-- Table for displaying students -->
+      <div class="container col-md-6" id="studentDisplayDiv">
+        <table class="table table-striped table-hover table-bordered" id="studentTable">
+          <tbody id="tblbodyStudent"></tbody>
+        </table>
+      </div>
+
+      <div id="errorMsgDiv"> 
+          <ul id="errorMessages"></ul> 
+        </div>
+
+    </form>
+
+  </main> <!-- /container -->
+
+
+  <footer class="container">
+    <hr />
+    <p>&copy; Adam Jacobs - HartCode Academy 2019</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="scripts/editteam.js"></script>
+  
+</body>
+
+</html>

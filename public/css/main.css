@@ -1,0 +1,166 @@
+body {
+    background-color: rgba(152, 179, 255, 0.555);
+}
+
+h1, h2, h3, h4, h6 {
+    font-family: 'Cinzel', serif;
+}
+
+#categoryName {
+    font-size: 1.5em;
+}
+
+.card-title {
+    font-size: 1.17em;
+    color: rgb(235, 21, 21);
+}
+
+.pTop {
+    font-family: 'Satisfy', cursive;
+}
+#topPara, .cardText {
+    font-family: 'Martel', serif;
+    padding: 5px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#jumboText {
+    color: rgba(247, 247, 247, 0.75); 
+    text-decoration: none;
+}
+
+footer p {
+    float: right;
+}
+
+#servicesContainer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 25px;
+}
+
+#viewCategories {
+    /* color: antiquewhite; */
+}
+.jumbotron {
+    border-radius: 25px;
+    margin: 20px;
+    background-image: url("../img/supermanflying.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%, 50%;
+    /* background-attachment: fixed; */
+}
+
+/* .hidden {
+    display: none;
+} */
+
+#categoryList {
+    background-color: rgb(255, 211, 216);
+}
+#categoryList a:hover {
+    background-color: rgb(230, 144, 154);
+}
+
+#cardImg {
+    height: 185px;
+    width: 250px;
+    border-radius: 15px;
+}
+
+#servicesList li {
+    background-color: rgba(176, 152, 255, 0.753);
+}
+#servicesList li:hover {
+    background-color: rgba(124, 91, 230, 1);
+    box-shadow: 0 0 5px 1px rgba(10, 44, 53, 0.884);
+}
+
+#cardDiv {
+    margin-top: 20px;
+}
+#serviceCard {
+    padding-top: 2.5em;;
+    width: 18rem;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+    height: 19.5em; 
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    background-color: rgba(152, 231, 255, 0.788); 
+}
+.flipper {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+    perspective: 1000px;
+}
+
+/* Flip the pane when hovered, Add a hover effect (blue/grey shadow) */
+.flipped, #cardDiv:hover .card {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 15px 1px rgba(10, 44, 53, 0.884);
+}
+
+.front, .back {
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    height: 100%;
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+    height: 100%;
+    background-color: rgb(91, 198, 230)
+}
+
+#topSection {
+    padding: 5px;
+}
+
+.memberImgs {
+    width: 100%;
+    height: 25.5rem;
+}
+
+#membercard {
+    height: 830px;
+}
+.card-bottom {
+    bottom: 5px;
+    position:absolute; 
+    width:90%;
+}
+.card-text {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+/* Do not display Card Imgs for smaller screens and add left margin */
+@media only screen and (max-width: 767px) {
+    /* #cardImg {
+        display: none;
+    } */
+    #serviceCard {
+        margin-left: 4.5rem;
+        height: 17.5em;
+        width: 12em;
+    }
+}
+
