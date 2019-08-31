@@ -37,10 +37,6 @@
           <a class="nav-link" href="teams.html">Teams</a>
         </li>
 
-        <li class="nav-item disabled">
-          <a class="nav-link" href="#">Courses</a>
-        </li>
-
       </ul>
     </div>
     <!-- End of Nav -->
@@ -53,8 +49,8 @@
       <div class="py-3"><br /></div>
       <div class="jumbotron text-white rounded shadow">
         <div class="text-center" id="jumboText">
-          <h1 class="display-4 font-italic">Edit The Course</h1>
-          <p class="lead my-3 pTop">Course</p>
+          <h1 class="display-4 font-italic">Add a Team</h1>
+          <p class="lead my-3 pTop">Add a Team</p>
         </div>
       </div>
     </div>
@@ -63,11 +59,11 @@
 
   <main class="container ">
 
-    <form class="shadow-lg p-3 mb-5" id="editTeamForm">
+    <form class="shadow-lg p-3 mb-5" id="regTeamForm" action="teams.html">
 
       <!-- Message at top of Table -->
-      <h3>Edit Team Detials</h3>
-      <small>Edit info on the Team.</small>
+      <h3>Add Team Detials</h3>
+      <small>Add info on the Team.</small>
       <hr />
 
       <!-- Team ID -->
@@ -102,13 +98,13 @@
       <div class="form-group row">
         <label for="minAge" class="col-sm-2 col-form-label">Min Age</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" id="minAge" placeholder="minAge" name="minAge" readonly>
+          <input type="text" class="form-control" id="minAge" placeholder="minAge" name="minAge">
         </div>
 
         <!-- Team Max Age -->
         <label for="maxAge" class="col-sm-1 col-form-label">Max Age</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" id="maxAge" placeholder="maxAge" name="maxAge" readonly>
+          <input type="text" class="form-control" id="maxAge" placeholder="maxAge" name="maxAge">
         </div>
 
         <!-- Team Gender -->
@@ -128,14 +124,13 @@
       <div class="form-group row">
         <label for="managerName" class="col-sm-2 col-form-label">Team Manager</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="managerName" placeholder="Team Manager" name="managerName"
-            readonly>
+          <input type="text" class="form-control" id="managerName" placeholder="Team Manager" name="managerName">
         </div>
 
         <!-- Team Manager Phone -->
         <label for="managerPhone" class="col-sm-2 col-form-label">Team Manager Phone</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="managerPhone" placeholder="Location" name="location" readonly>
+          <input type="text" class="form-control" id="managerPhone" placeholder="Location" name="location">
         </div>
       </div>
 
@@ -145,8 +140,8 @@
       <div class="text-center col">
         <button type="button" class="btn btn-outline-primary btn-lg" name="editTeamBtn" id="editTeamBtn">Edit
           Team</button>
-        <button type="button" class="btn btn-outline-primary btn-lg hidden" name="updateTeamBtn"
-          id="updateTeamBtn">Update Team</button>
+        <button type="button" class="btn btn-outline-primary btn-lg hidden" name="regTeamBtn"
+          id="regTeamBtn">Register Team</button>
         <button type="button" class="btn btn-outline-danger btn-lg hidden" id="resetBtn">Reset</button>
         <button type="button" class="btn btn-outline-warning btn-lg" id="cancelBtn">Cancel</button>
       </div>
@@ -184,7 +179,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-  <script src="scripts/editteam.js"></script>
+  <script src="scripts/registerteam.js"></script>
 
 </body>
 

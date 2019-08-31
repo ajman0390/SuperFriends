@@ -182,8 +182,24 @@ app.get("/details.html", function (req, res) {
     res.sendFile( __dirname + "/public/" + "details.html" );
 })
 
+app.get("/editteam.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "editteam.html" );
+})
+
 app.get("/teams.html", function (req, res) {
     res.sendFile( __dirname + "/public/" + "teams.html" );
+})
+
+app.get("/member.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "member.html" );
+})
+
+app.get("/registermember.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "registermember.html" );
+})
+
+app.get("/registerteam.html", function (req, res) {
+    res.sendFile( __dirname + "/public/" + "registerteam.html" );
 })
 
 // TODO:  YOU WILL NEED TO ADD MORE CALLS TO app.get() FOR EACH PAGE
@@ -194,6 +210,20 @@ app.get("/teams.html", function (req, res) {
 
 // ------------------------------------------------------------------------------
 // THIS CODE ALLOWS REQUESTS FOR THE API THROUGH 
+
+// GET POWERS
+app.get("/api/powers", function (req, res) {
+    console.log("Received a GET request for powers");
+	
+    let data = fs.readFileSync( __dirname + "/data/powers.json", "utf8");
+    data = JSON.parse(data);
+    
+    // console.log("Returned powers are: ");
+    // for(let i = 0; i < data.length; i++) {
+    //   console.log("Power: " + data[i]);
+    // }
+    res.end( JSON.stringify(data) );
+});
 
 // GET LEAGUES
 app.get("/api/leagues", function (req, res) {
@@ -310,11 +340,11 @@ app.post("/api/teams", urlencodedParser, function (req, res) {
     //console.log("Performing team validation...")
     if (! isValidTeam(team))
     {
-        //console.log("Invalid  data!")
+        console.log("Invalid  data!")
 		res.status(400).send("Bad Request - Incorrect or Missing Data");
 		return;      
     }
-    //console.log("Valid data!")
+    console.log("Valid data!")
 
     let data = fs.readFileSync( __dirname + "/data/teams.json", "utf8");
     data = JSON.parse( data );
@@ -326,7 +356,8 @@ app.post("/api/teams", urlencodedParser, function (req, res) {
    
     //console.log("New team added: ");
 	//logOneTeam(team);
-    res.status(200).send();
+    // res.status(200).send();
+    res.send(JSON.stringify(team));
  })
 
  // EDIT A TEAM
@@ -459,11 +490,11 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
     //console.log("Performing member validation...")
     if (! isValidMember(member))
     {
-        //console.log("Invalid  data!")
+        console.log("Invalid  data!")
 		res.status(400).send("Bad Request - Incorrect or Missing Data");
 		return;      
     }
-    //console.log("Valid data!")
+    console.log("Valid data!")
 
     let data = fs.readFileSync( __dirname + "/data/teams.json", "utf8");
     data = JSON.parse( data );
@@ -494,8 +525,8 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 
     fs.writeFileSync(__dirname + "/data/teams.json", JSON.stringify(data));
    
-    //console.log("New member added: ");
-	//console.log("Name: " + member.MemberName)
+    console.log("New member added: ");
+	console.log("Name: " + member.MemberName)
     res.status(200).send();
  })
 
@@ -509,7 +540,8 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
     let member = {
         MemberId: req.body.memberid,
         Email: req.body.email,
-		MemberName: req.body.membername,
+        MemberName: req.body.membername,
+        SecretIdentity: req.body.secretidentity,
 		ContactName: req.body.contactname,
 		Age: Number(req.body.age),
         Gender: req.body.gender,
@@ -592,7 +624,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
     console.log("Found team!");
 
     // find existing member on the team
-    let foundAt = team.Members.findIndex( m => m.MemberId == req.body.memberid );
+    let foundAt = team.Members.findIndex( m => m.MemberId == memberId );
 
     let match = null;
     // delete the member if found

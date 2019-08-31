@@ -55,93 +55,102 @@
 
   <main>
     <article class="col-md-8 offset-md-2 ">
-      <h2>Edit Member</h2>
+      <h2>Add a Member</h2>
 
       <!-- Beginning of Registration Form -->
       <!-- <form class="form-signin" action="#" method="POST"> -->
-      <form class="shadow-lg p-3 mb-5" action="#" id="memberForm">
+      <form class="shadow-lg p-3 mb-5" action="#" id="registerMember">
 
         <!-- Course ID -->
         <div class="form-group form-row">
           <div class="col">
-            <label for="teamid">Team ID: </label>
-            <input type="number" class="form-control" name="teamid" id="teamid" placeholder="TeamID" readonly>
+            <label for="teamname">Team</label>
+            <input type="text" class="form-control" name="teamname" id="teamname" placeholder="Team Name" readonly>
           </div>
           <div class="col">
-              <label for="memberid">Member ID: </label>
-              <input type="number" class="form-control" name="memberid" id="memberid" placeholder="MemberID" readonly>
-            </div>
+            <label for="memberid">Member ID: </label>
+            <input type="number" class="form-control" name="memberid" id="memberid" placeholder="MemberID" readonly>
+          </div>
         </div>
 
         <!-- Add Member inputs -->
         <div class="form-group form-row">
           <div class="col">
-            <label for="membername">Member Name</label>
-            <input type="text" class="form-control" id="membername" name="membername" placeholder="Member Name"
-            readonly minlength="2" maxlength="35">
+            <label for="membername">New Member Name</label>
+            <input type="text" class="form-control" id="membername" name="membername" placeholder="Member Name" readonly
+              minlength="2" maxlength="35">
           </div>
         </div>
         <div class="form-group form-row">
           <div class="col">
-            <label for="secretidentity">Member's Secret Identity</label>
-            <input type="text" class="form-control" id="secretidentity" name="secretidentity" placeholder="Member's Secret Identity" readonly>
+            <label for="secretidentity">New Member's Secret Identity</label>
+            <input type="text" class="form-control" id="secretidentity" name="secretidentity"
+              placeholder="Member's Secret Identity" readonly>
           </div>
         </div>
 
         <div class="form-group form-row">
-            <div class="col">
-              <label for="contactname">Member's Age</label>
-              <input type="number" class="form-control" id="age" name="age" placeholder="Member's age" readonly>
-            </div>
-
-            <div class="col">
-                <label for="gender">Member Gender</label>
-                <!-- <input type="text" class="form-control" id="gender" name="gender" placeholder="Member's Gender" readonly> -->
-                <select class="form-control" id="gender" name="gender" disabled>
-                    <option value="Any" selected>Any</option>
-                    <option value="Female">Female</option>
-                    <option value="Male">Male</option>
-                  </select>
-              </div>
+          <div class="col">
+            <label for="contactname">New Member's Age</label>
+            <input type="number" class="form-control" id="age" name="age" placeholder="Member's age" readonly>
           </div>
 
-          <div class="form-group form-row">
-              <div class="col">
-                <label for="contactname">Member Contact's Name</label>
-                <input type="text" class="form-control" id="contactname" name="contactname" placeholder="Member's Contact Name" readonly>
-              </div>
+          <div class="col">
+            <label for="gender">Member Gender</label>
+            <!-- <input type="text" class="form-control" id="gender" name="gender" placeholder="Member's Gender" readonly> -->
+            <select class="form-control" id="gender" name="gender" disabled>
+              <option value="Any" selected>Any</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
           </div>
+        </div>
 
         <div class="form-group form-row">
           <div class="col">
-            <label for="email">Member Email</label>
+            <label for="contactname">Member's Contact Name</label>
+            <input type="text" class="form-control" id="contactname" name="contactname"
+              placeholder="Member's Contact Name" readonly>
+          </div>
+        </div>
+
+        <div class="form-group form-row">
+          <div class="col">
+            <label for="email">Member's Email</label>
             <input type="text" class="form-control" id="email" name="email" placeholder="Email" readonly>
           </div>
-        
-        
-            <div class="col">
-              <label for="phone">Member Phone</label>
-              <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Phone" readonly>
-            </div>
-          </div>
 
-        
-        
+
+          <div class="col">
+            <label for="phone">Member's Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Phone" readonly>
+          </div>
+        </div>
+
+        <!-- errorMsg Row -->
+        <div class="form-row">
+          <div class="text-left col">
+            <p id="errorMsg"></p>
+          </div>
+        </div>
+
+
+
         <div class="form-group form-row">
           <div class="col-md-6">
-            <label for="membersuperpowers">Member SuperPowers</label>
+            <label for="membersuperpowers">Member's SuperPowers</label>
             <ul id="membersuperpowersList"></ul>
             <!-- <input type="email" class="form-control" id="membersuperpowers" name="membersuperpowers" placeholder="Member SuperPowers" readonly> -->
             <select class="form-control" id="membersuperpowers" name="membersuperpowers" disabled>
-                <option value="zero" selected>Any</option>
-              </select>
+              <option value="zero" selected>Any</option>
+            </select>
 
-              <div class="col">
-                  <button type="button" class="btn btn-outline-primary mt-3 hidden" name="updatePowersBtn"
-                  id="updatePowersBtn">Update Member SuperPowers</button>
-              </div>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary mt-3 hidden" name="updatePowersBtn"
+                id="updatePowersBtn">Update Member SuperPowers</button>
+            </div>
           </div>
-          
+
         </div>
 
         <div class="form-row">
@@ -151,17 +160,17 @@
           <!-- Form Add and Reset Btns -->
           <div class="text-right col" id="memberBtnDiv">
             <button type="button" class="btn btn-outline-success hidden" name="regBtn" id="regBtn">Register</button>
-            <button type="button" class="btn btn-outline-primary" name="editMemberBtn" id="editMemberBtn">Edit
-                Member</button>
-              <button type="button" class="btn btn-outline-primary hidden" name="updateMemberBtn"
-                id="updateMemberBtn">Update Member</button>
+            <button type="button" class="btn btn-outline-primary" name="editMemberBtn" id="editMemberBtn">Add
+              Member</button>
+            <button type="button" class="btn btn-outline-primary hidden" name="addMemberBtn" id="addMemberBtn">Add
+              Member</button>
             <button type="button" class="btn btn-outline-danger" id="resetBtn">Reset</button>
             <button type="button" class="btn btn-outline-warning" id="cancelBtn">Cancel</button>
           </div>
         </div>
 
       </form>
-      <!-- End of Member Form -->
+      <!-- End of Registration Form -->
 
     </article>
 
@@ -178,7 +187,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="scripts/member.js"></script>
+  <script src="scripts/registermember.js"></script>
 </body>
 
 </html>
