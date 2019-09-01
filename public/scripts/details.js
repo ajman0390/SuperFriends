@@ -13,6 +13,10 @@ $(function () {
             createMemberCards(teamObj, TeamId);
 
         })
+
+        $('#addMemberBtn').on('click', function () {
+            window.location.assign("/registermember.html?TeamId=" + TeamId); ///api/teams/:id/members
+          });
 })
 
 function createTeamDetailsCard(teamObj, TeamId) {
@@ -28,8 +32,10 @@ function createTeamDetailsCard(teamObj, TeamId) {
     let uri = `/editteam.html?TeamId=${TeamId}`;
     uri = encodeURI(uri);
     
-    let editLink = `<a href="${uri}" class="btn btn-sm btn-outline-secondary">Edit</a>`
-    $("#editBtnArea").append(editLink);
+    let editLink = `<a href="${uri}" class="btn btn-sm btn-outline-primary">Edit</a>`
+    $("#editBtnDiv").append(editLink);
+    let deleteLink = `<a href="${uri}" class="btn btn-sm btn-outline-danger">Delete</a>`
+    $("#deleteBtnDiv").append(deleteLink);
 
     $('#serviceCard').delay('10').fadeIn();
 
@@ -46,19 +52,19 @@ function createMemberCards(teamObjs, TeamId) {
 }
 
 function createMemberCard(teamMember, TeamId) {
-    let uri = `/member.html?TeamId=${TeamId}&memberid=${teamMember.MemberId}`;
+    let uri = `/member.html?TeamId=${TeamId}&MemberId=${teamMember.MemberId}`;
     uri = encodeURI(uri);
 
-    let urb = `/member.html?TeamId=${TeamId}&memberid=${teamMember.MemberId}`;
+    let urb = `/member.html?TeamId=${TeamId}&MemberId=${teamMember.MemberId}`;
     urb = encodeURI(urb);
 
 
     let memberCard = `
     <div class="col-md-4 ">
-        <div class="card mb-4 shadow-sm" id="membercard">
+        <div class="card mb-4 shadow-sm " id="membercard">
             <div class="card-body card-block">
 
-            <div class="face front">
+
 
                 <h3 class="card-title text-center">${teamMember.MemberName}</h3>
             
@@ -69,12 +75,12 @@ function createMemberCard(teamMember, TeamId) {
                     <div class="btn-group">
                         <button type="button" id="view${teamMember.MemberName}Btn" class="btn btn-sm btn-outline-secondary">View</button>
                         <a href=${uri} class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Delete</a>
                     </div>
                     <small class="text-muted">${teamMember.Gender}</small>
                 </div>
 
-                </div>
-                <div class="face back">Back</div>
+
               
             </div>
         </div>
@@ -107,3 +113,5 @@ function createRow(title, value) {
     let row = "<tr><td class='titleTbl'>" + title + '</td><td>' + value + '</td></tr>';
     $("#tblbody").append(row);
 }
+
+

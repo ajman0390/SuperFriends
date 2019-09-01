@@ -23,16 +23,21 @@ $(function () {
                     clearTable();
                     return;
                 } else {
+                    clearTable();
+                    createTableHead();
                     $.getJSON(("/api/teams/byleague/" + $("#inputTeamDropdown").val()),
                         function (data) {
                             let teamObjs = data;
-                            clearTable();
                             let teamLen = teamObjs.length;
                             for (let i = 0; i < teamLen; i++) {
                                 createRow(teamObjs[i]);
                             }
                         });
                 }
+            });
+
+            $("#addTeamBtn").on("click", function () {
+                window.location.assign("/registerteam.html?TeamId=" );
             });
         })
 });
@@ -41,8 +46,8 @@ $(function () {
 * This clears results table in Table
 */
 function clearTable() {
-    $("#tblbody").empty();
-    $("#courseSearchTable").hide();
+    $("#teamSearchTable").empty();
+    $("#teamSearchTable").hide();
 }
 
 /*
@@ -50,22 +55,37 @@ function clearTable() {
 */
 $("#showAllBtn").on("click", function () {
     clearTable();
+    createTableHead();
     $("#inputTeamDropdown").val("zero");
-
     $.getJSON("/api/teams",
-        function (allCourses) {
-            let allCoursesLen = allCourses.length;
-
-            for (let i = 0; i < allCoursesLen; i++) {
-                createRow(allCourses[i]);
+        function (allTeams) {
+            let allTeamsLen = allTeams.length;
+            for (let i = 0; i < allTeamsLen; i++) {
+                createRow(allTeams[i]);
             }
         });
 });
 
 /*
-* This funciton to create rows in Table
+* This function to creates thead and tbody in Teams Table
+*/
+function createTableHead() {
+    $("#teamSearchTable").append("<thead>");
+    $("#teamSearchTable thead").append("<tr>", {
+        title: ``
+    });
+    $("#teamSearchTable thead tr").append($("<th>", {text: "Team Name"}))
+        .append($("<th>", {text: "Team Manager"}))
+        .append($("<th>", {text: "Details"}));
+        $("#teamSearchTable").append($("<tbody>", {id: "tblbody"}));     
+}
+
+/*
+* This function to create rows in Table
 */
 function createRow(teamObjs) {
+    
+
     let tableRow =
         "<tr data-toggle='popover' title='" + teamObjs.TeamName + "'><td>" +
         teamObjs.TeamName +
@@ -76,16 +96,18 @@ function createRow(teamObjs) {
         teamObjs.TeamId +
         "'>Details</a></td></tr>";
     $("#tblbody").append(tableRow);
-    $("#courseSearchTable").show();
+    $("#teamSearchTable").show();
 };;
 
 // Reset Btn
 $("#resetBtn").on("click", function () {
     clearTable();
-    $("#courseSearchTable").hide();
+    $("#teamSearchTable").hide();
     $("#inputTeamDropdown").val("zero");
     $("#Age").val("zero");
 });
+
+
 
 // Popovers
 $(document).ready(function () {

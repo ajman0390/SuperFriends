@@ -36,7 +36,7 @@ footer p {
     float: right;
 }
 
-#servicesContainer {
+#teamContainer {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 25px;
@@ -55,16 +55,16 @@ footer p {
     /* background-attachment: fixed; */
 }
 
-/* .hidden {
+.hidden {
     display: none;
-} */
+}
 
-#categoryList {
+/* #categoryList {
     background-color: rgb(255, 211, 216);
 }
 #categoryList a:hover {
     background-color: rgb(230, 144, 154);
-}
+} */
 
 #cardImg {
     height: 185px;
@@ -72,13 +72,13 @@ footer p {
     border-radius: 15px;
 }
 
-#servicesList li {
+/* #servicesList li {
     background-color: rgba(176, 152, 255, 0.753);
 }
 #servicesList li:hover {
     background-color: rgba(124, 91, 230, 1);
     box-shadow: 0 0 5px 1px rgba(10, 44, 53, 0.884);
-}
+} */
 
 #cardDiv {
     margin-top: 20px;
@@ -103,7 +103,7 @@ footer p {
 }
 
 /* Flip the pane when hovered, Add a hover effect (blue/grey shadow) */
-.flipped, #cardDiv:hover .card {
+#cardDiv:hover .card {
     transform: rotateY(180deg);
     box-shadow: 0 0 15px 1px rgba(10, 44, 53, 0.884);
 }
@@ -151,6 +151,16 @@ footer p {
     margin-top: 20px; 
     margin-bottom: 20px;
 }
+
+.col-form-label, #memberBtnDiv {
+    white-space: nowrap;
+}
+#editTeamForm label {
+    font-weight: bold;
+}
+/* #membersuperpowersList li {
+    background-color: #FFFFFF;
+} */
 
 /* Do not display Card Imgs for smaller screens and add left margin */
 @media only screen and (max-width: 767px) {
