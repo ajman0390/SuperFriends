@@ -8,7 +8,7 @@ $(function() {
     // Create Input League Dropdown list
     const legLen = leagueObjs.length;
     for (let i = 0; i < legLen; i++) {
-        $("#teamLeague").append("<option value='" + leagueObjs[i].Code + "'>" + leagueObjs[i].Name + "</option>")
+        $("#teamLeague").append("<option value='" + leagueObjs[i].Code + "'>" + leagueObjs[i].Name + "</option>");
     }
 
   }); 
@@ -16,7 +16,7 @@ $(function() {
   $("#regTeamBtn").on("click", function() {
     $.post("api/teams", $("#regTeamForm").serialize(), function(data) {
       data = JSON.parse(data);
-      //location.href = "teams.html";
+      location.href = "teams.html?TeamId=" + data.TeamId;
     });
      
   });
