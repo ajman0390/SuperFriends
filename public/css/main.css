@@ -41,10 +41,6 @@ footer p {
     margin-bottom: 15px;
     padding: 25px;
 }
-
-#viewCategories {
-    /* color: antiquewhite; */
-}
 .jumbotron {
     border-radius: 25px;
     margin: 20px;
@@ -58,27 +54,16 @@ footer p {
 .hidden {
     display: none;
 }
-
-/* #categoryList {
-    background-color: rgb(255, 211, 216);
+#managerData, #memberData, #memberPowersData {
+    border: thin solid;
+    padding: 10px;
 }
-#categoryList a:hover {
-    background-color: rgb(230, 144, 154);
-} */
 
 #cardImg {
     height: 185px;
     width: 250px;
     border-radius: 15px;
 }
-
-/* #servicesList li {
-    background-color: rgba(176, 152, 255, 0.753);
-}
-#servicesList li:hover {
-    background-color: rgba(124, 91, 230, 1);
-    box-shadow: 0 0 5px 1px rgba(10, 44, 53, 0.884);
-} */
 
 #cardDiv {
     margin-top: 20px;
@@ -152,11 +137,14 @@ footer p {
     margin-bottom: 20px;
 }
 
-.col-form-label, #memberBtnDiv {
+.col-form-label, #memberBtnDiv, #managerInfoLegend {
     white-space: nowrap;
 }
-#editTeamForm label {
+label {
     font-weight: bold;
+}
+fieldset {
+    max-width: max-content;
 }
 /* #membersuperpowersList li {
     background-color: #FFFFFF;

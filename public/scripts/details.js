@@ -14,9 +14,23 @@ $(function () {
 
         })
 
-        $('#addMemberBtn').on('click', function () {
-            window.location.assign("/registermember.html?TeamId=" + TeamId); ///api/teams/:id/members
-          });
+    $('#addMemberBtn').on('click', function () {
+        window.location.assign("/registermember.html?TeamId=" + TeamId); 
+    });
+
+    // Delete Team
+    for (let i = 0; i < teamObj.length; i++){
+        $("#deleteTeam" + teamObj[i].TeamId).on("click", function () {
+            $.ajax({
+                url: "/api/teams/" + teams[i].TeamId,
+                method: "DELETE",
+                success: function () {
+                    alert("Updated!");
+                }
+            });
+            location.href = "index.html";
+        });
+    }
 })
 
 function createTeamDetailsCard(teamObj, TeamId) {
@@ -31,10 +45,10 @@ function createTeamDetailsCard(teamObj, TeamId) {
 
     let uri = `/editteam.html?TeamId=${TeamId}`;
     uri = encodeURI(uri);
-    
+
     let editLink = `<a href="${uri}" class="btn btn-sm btn-outline-primary">Edit</a>`
     $("#editBtnDiv").append(editLink);
-    let deleteLink = `<a href="${uri}" class="btn btn-sm btn-outline-danger">Delete</a>`
+    let deleteLink = `<a href="#" id="deleteTeam${TeamId}" class="btn btn-sm btn-outline-danger">Delete</a>`
     $("#deleteBtnDiv").append(deleteLink);
 
     $('#serviceCard').delay('10').fadeIn();
@@ -55,16 +69,10 @@ function createMemberCard(teamMember, TeamId) {
     let uri = `/member.html?TeamId=${TeamId}&MemberId=${teamMember.MemberId}`;
     uri = encodeURI(uri);
 
-    let urb = `/member.html?TeamId=${TeamId}&MemberId=${teamMember.MemberId}`;
-    urb = encodeURI(urb);
-
-
     let memberCard = `
     <div class="col-md-4 ">
-        <div class="card mb-4 shadow-sm " id="membercard">
+        <div class="card mb-4 shadow-sm " id="membercard${teamMember.MemberName}">
             <div class="card-body card-block">
-
-
 
                 <h3 class="card-title text-center">${teamMember.MemberName}</h3>
             
@@ -75,12 +83,10 @@ function createMemberCard(teamMember, TeamId) {
                     <div class="btn-group">
                         <button type="button" id="view${teamMember.MemberName}Btn" class="btn btn-sm btn-outline-secondary">View</button>
                         <a href=${uri} class="btn btn-sm btn-outline-secondary">Edit</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        <a href="#" id="deleteMember${teamMember.MemberId}" class="btn btn-sm btn-outline-secondary">Delete</a>
                     </div>
                     <small class="text-muted">${teamMember.Gender}</small>
                 </div>
-
-
               
             </div>
         </div>
@@ -113,5 +119,4 @@ function createRow(title, value) {
     let row = "<tr><td class='titleTbl'>" + title + '</td><td>' + value + '</td></tr>';
     $("#tblbody").append(row);
 }
-
 
