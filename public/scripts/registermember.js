@@ -25,8 +25,8 @@ $(function () {
 
     });
   $("#addMemberBtn").on("click", function () {
-    $.post("api/teams/" + TeamId + "/members", $("#registerMember").serialize());
-    window.location.href = "details.html?TeamId=" + TeamId; // redirect after submit 
+    $.post("api/teams/" + TeamId + "/members/", $("#registerMember").serialize());
+    window.location.href = "details.html?TeamId=" + TeamId; // redirect 
   });
 
 });

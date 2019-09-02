@@ -15,8 +15,8 @@ $(function() {
   $("#editTeamBtn").on("click", changeBtns);
   $("#regTeamBtn").on("click", function() {
     $.post("api/teams", $("#regTeamForm").serialize(), function(data) {
-      data = JSON.parse(data);
-      location.href = "teams.html?TeamId=" + data.TeamId;
+      postData = JSON.parse(data);
+      location.href = "teams.html?TeamId=" + postData.TeamId;
     });
      
   });

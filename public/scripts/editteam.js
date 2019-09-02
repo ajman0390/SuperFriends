@@ -66,29 +66,18 @@ function sendForm() {
     }
 }
 
-// Delete Member
-// $("#team" + teams[i].TeamId).on("click", function () {
-//     confirm("Are you sure you want to delete this band?");
-//     $.ajax({
-//         url: "/api/teams/" + teams[i].TeamId,
-//         method: "DELETE",
-//         success: function () {
-//             alert("Updated!");
-//         }
-//     });
-//     location.href = "index.html";
-// });
-
 function createDropDown() {
     let leagueObjs;
     $.getJSON("/api/leagues",
         function (data) {
             leagueObjs = data;
-
             // Create Input Category Dropdown list
             const legLen = leagueObjs.length;
             for (let i = 0; i < legLen; i++) {
-                $("#teamLeague").append("<option value='" + leagueObjs[i].Name + "'>" + leagueObjs[i].Name + "</option>")
+                $("#teamLeague").append("<option>", {
+                    value: leagueObjs[i].Name,
+                    text: leagueObjs[i].Name 
+                });
             }
         })
 }
