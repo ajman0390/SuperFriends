@@ -74,30 +74,20 @@ $("#showAllBtn").on("click", function () {
 * This function to creates thead and tbody in Teams Table
 */
 function createTableHead() {
-    $("#teamSearchTable").append("<thead>");
+    $("#teamSearchTable").append($("<thead>", {class: "text-center"}));
     $("#teamSearchTable thead").append("<tr>", {
-        title: ``
+        class: "text-center"
     });
     $("#teamSearchTable thead tr").append($("<th>", { text: "Team Name" }))
         .append($("<th>", { text: "Team Manager" }))
         .append($("<th>", { text: "Details" }));
-    $("#teamSearchTable").append($("<tbody>", { id: "tblbody" }));
+    $("#teamSearchTable").append($("<tbody>", { id: "tblbody", class: "text-center" }));
 }
 
 /*
 * This function to create rows in Table
 */
 function createRow(teamObjs) {
-
-    // let tableRow =
-    //     "<tr data-toggle='popover' title='" + teamObjs.TeamName + "'><td>" +
-    //     teamObjs.TeamName +
-    //     "</td><td>" +
-    //     teamObjs.ManagerName +
-    //     "</td>" +
-    //     "<td><a href='details.html?TeamId=" +
-    //     teamObjs.TeamId +
-    //     "'>Details</a></td></tr>";
 
     $("#tblbody").append($("<tr>", { 
         title: teamObjs.TeamName
@@ -108,7 +98,9 @@ function createRow(teamObjs) {
     $("#tblbody tr:last").append($("<td>", {
         text: teamObjs.ManagerName
     }));
-    $("#tblbody tr:last").append($("<td>"));
+    $("#tblbody tr:last").append($("<td>", {
+        class: "text-center"
+    }));
     $("#tblbody tr td:last").append($("<a>", {
         href: "details.html?TeamId=" +
         teamObjs.TeamId,

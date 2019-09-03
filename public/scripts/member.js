@@ -58,36 +58,6 @@ $(function () {
     });
 });
 
-function validateForm(TeamId) {
-
-    // Validate student name and email inputs 
-    const namePattern = /[-'a-zA-Z]/
-
-    if (!(namePattern.test($("#studentname").val().trim()))) {
-        $("#errorMsg").html("Please fill out name field");
-        $("#errorMsg").show();
-        $("#studentname").focus();
-        return;
-    } else {
-        if ($("#email").val() == "") {
-            $("#errorMsg").html("Please fill out all fields");
-            $("#errorMsg").show();
-            $("#email").focus();
-            return;
-        } else {
-            const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
-
-            if (emailPattern.test($("#email").val())) {
-                $("#errorMsg").hide();
-            } else {
-                $("#errorMsg").html("Please enter valid email address");
-                $("#errorMsg").show();
-                $("#email").focus();
-                return;
-            }
-        }
-    }
-}
 
 function createPowersList(memberObj) {
 

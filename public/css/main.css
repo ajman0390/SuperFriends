@@ -10,6 +10,10 @@ h1, h2, h3, h4, h6 {
     font-size: 1.5em;
 }
 
+#errorMessages {
+    background-color: rgb(255, 204, 204);
+}
+
 .card-title {
     font-size: 1.17em;
     color: rgb(235, 21, 21);

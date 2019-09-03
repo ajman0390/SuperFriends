@@ -25,18 +25,19 @@
                 "Description": "Superman was born on the planet Krypton and was given the name Kal-El at birth. As a baby, his parents sent him to Earth in a small spaceship moments before Krypton was destroyed in a natural cataclysm. To protect his privacy, he changes into a colorful costume and uses the alias \"Superman\" when fighting crime.",
                 "SuperPowers": [
                     "Superhuman Strength",
+                    "Superhuman Endurance",
                     "Superhuman Vision",
                     "Superhuman Breath",
                     "Superhuman Speed",
                     "Invulnerability",
-                    "Healing Factor",
+                    "Regenerative Healing",
                     "Flight"
                 ],
                 "Abilities": [
                     "None"
                 ],
                 "Gear": [
-                    "Superman's Uniform"
+                    "Superman's Suit"
                 ]
             },
             {
@@ -85,7 +86,7 @@
                     "Immortality",
                     "Master hand-to-hand combatant",
                     "Invulnerability",
-                    "Healing Factor",
+                    "Regenerative Healing",
                     "Flight"
                 ],
                 "Abilities": [
@@ -113,8 +114,8 @@
                 "Description": "Barry Allen had a reputation for being very slow, and frequently late, which frustrates his fiancée, Iris West. One night, as he is working late on a new case, a lightning bolt strikes and shatters a case full of unspecified chemicals and drenches all over Barry. As a result, Allen later finds that he can run at super-human speeds and possesses equally enhanced reflexes, senses, and healing.",
                 "SuperPowers": [
                     "Super-Human Speed",
-                    "Superhuman levels of stamina, reflexes, agility, and endurance",
-                    "Intangibility through molecular vibration at high velocity",
+                    "Superhuman Reflexes",
+                    "Intangibility",
                     "Speed Reading"
                 ],
                 "Abilities": [
@@ -157,11 +158,11 @@
                 "Gender": "Male",
                 "Phone": "REDACTED",
                 "Image": "aquaman.png",
-                "Description": "Aquaman was Arthur Curry, the son of Tom Curry, a lighthouse keeper, and Atlanna, a water-breathing outcast from the lost, underwater city of Atlantis. Due to his heritage, Aquaman discovers as a youth that he possesses various superhuman abilities, including the powers of surviving underwater, communication with sea life, and tremendous swimming prowess. Eventually, Arthur decided to use his talents to become the defender of the Earth's oceans.",
+                "Description": "Aquaman was Arthur Curry, the son of Tom Curry, a lighthouse keeper, and Atlanna, a water-breathing outcast from the lost, underwater city of Atlantis. Due to his heritage, Aquaman discovers as a youth that he possesses various superhuman abilities, including the powers of surviving underwater, and communication with sea life. Eventually, Arthur decided to use his talents to become the defender of the Earth's oceans.",
                 "SuperPowers": [
                     "Control of Aquatic Life",
                     "Superhuman Strength",
-                    "Accelerated Healing",
+                    "Regenerative Healing",
                     "Super-fast Swimming"
                 ],
                 "Abilities": [
@@ -221,7 +222,7 @@
                 "Age": 10,
                 "Gender": "Male",
                 "Phone": "680-555-5454",
-                "Image": "wolverine.png",
+                "Image": "wolverine.jpg",
                 "Description": "Cyclops is a member of a subspecies of humans known as mutants, who are born with superhuman abilities. Cyclops can emit powerful beams of energy from his eyes. He cannot control the beams without the aid of special eyewear which he must wear at all times.",
                 "SuperPowers": [
                     "Superhuman Senses",
@@ -264,7 +265,7 @@
                 "MemberId": 10,
                 "Email": "Natalie214@aol.com",
                 "MemberName": "Beast",
-                "ContactName": "Vera Cantor", 
+                "ContactName": "Vera Cantor",
                 "SecretIdentity": "Dr. Henry Philip \"Hank\" McCoy",
                 "Age": 54,
                 "Gender": "Male",
@@ -328,192 +329,240 @@
         ]
     },
     {
-        "TeamId": 22,
+        "TeamId": 3,
         "TeamName": "Avengers",
-        "League": "Lil-Supers",
+        "League": "Superheroes",
         "ManagerName": "Nick Fury",
         "ManagerPhone": "817-555-5454",
         "ManagerEmail": "NFury214@aol.com",
-        "Image": "justice_league.png",
+        "Image": "Avengers.png",
         "MinMemberAge": 1,
         "MaxMemberAge": 99,
         "MaxTeamMembers": 16,
         "TeamGender": "Any",
         "Members": [
             {
-                "MemberId": 21,
+                "MemberId": 13,
                 "Email": "superman@aol.com",
-                "MemberName": "Superman",
-                "ContactName": "Lois Lane",
-                "SecretIdentity": "Clark Kent",
+                "MemberName": "Iron Man",
+                "ContactName": "Virginia \"Pepper\" Potts",
+                "SecretIdentity": "Anthony Edward \"Tony\" Stark",
                 "Age": 60,
                 "Gender": "Male",
                 "Phone": "REDACTED",
-                "Image": "supermanflying.png",
-                "SuperPowers": [
-                    "Superhuman Strength",
-                    "Superhuman Vision",
-                    "Superhuman Breath",
-                    "Superhuman Speed",
-                    "Invulnerability",
-                    "Healing Factor",
-                    "Flight"
-                ],
-                "Abilities": [
-                    "None"
-                ],
-                "Gear": [
-                    "Superman's Uniform"
-                ]
-            },
-            {
-                "MemberId": 22,
-                "Email": "bgatemca@aol.com",
-                "MemberName": "Batman",
-                "ContactName": "Alfred Pennyworth",
-                "SecretIdentity": "Bruce Wayne",
-                "Age": 63,
-                "Gender": "Male",
-                "Phone": "REDACTED",
-                "Image": "batman.png",
+                "Image": "Iron_Man.png",
+                "Description": "A wealthy American business magnate, playboy, and ingenious scientist, Anthony Edward \"Tony\" Stark suffers a severe chest injury during a kidnapping. When his captors attempt to force him to build a weapon of mass destruction, he instead creates a mechanized suit of armor to save his life and escape captivity.",
                 "SuperPowers": [
                     "None"
                 ],
                 "Abilities": [
                     "Genius-level Intellect",
-                    "Expert Detective",
-                    "Indomitable Will",
-                    "Peak Human Condition",
-                    "Master Martial Artist and Hand-to-Hand Combatant",
-                    "Utilizes high-tech Equipment"
+                    "Proficient Scientist and Engineer"
                 ],
                 "Gear": [
-                    "Batsuit",
-                    "Batmobile",
-                    "Utility Belt",
-                    "Bat-Signal",
-                    "Batcave"
+                    "High-tech Warsuit"
                 ]
             },
             {
-                "MemberId": 23,
+                "MemberId": 14,
+                "Email": "bgatemca@aol.com",
+                "MemberName": "Thor",
+                "ContactName": "Jane Foster",
+                "SecretIdentity": "Thor Odinson",
+                "Age": 33,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "Thor.png",
+                "Description": "Thor Odinson is based on the Norse deity of the same name, is the Asgardian god of thunder who possesses the enchanted hammer, Mjolnir, which grants him the ability to fly and manipulate weather amongst his other superhuman attributes.",
+                "SuperPowers": [
+                    "Superhuman Strength",
+                    "Superhuman Durability"
+                ],
+                "Abilities": [
+                    "Skilled Hand-to-Hand Combatant"
+                ],
+                "Gear": [
+                    "Mjolnir"
+                ]
+            },
+            {
+                "MemberId": 15,
                 "Email": "Natalie214@aol.com",
-                "MemberName": "Wonder Woman",
-                "ContactName": "Diana Prince",
-                "SecretIdentity": "Diana Prince",
-                "Age": 10,
+                "MemberName": "Ant-Man",
+                "ContactName": "Janet van Dyne",
+                "SecretIdentity": "Dr. Henry \"Hank\" Pym",
+                "Age": 36,
                 "Gender": "Female",
                 "Phone": "REDACTED",
-                "Image": "wonder_woman.jpg",
+                "Image": "Ant-Man.png",
+                "Description": "Biochemist Dr. Henry \"Hank\" Pym discovers an unusual set of subatomic particles he labels \"Pym particles\". Entrapping these within two separate serums, he creates a size-altering formula and a reversal formula, testing them on himself.",
+                "SuperPowers": [
+                    "Size-Shifting",
+                    "Superhuman Strength",
+                    "Bio-Energy Projection"
+                ],
+                "Abilities": [
+                    "Genius-level Intellect"
+                ],
+                "Gear": [
+                    "Cybernetic Helmet"
+                ]
+            },
+            {
+                "MemberId": 16,
+                "Email": "Natalie214@aol.com",
+                "MemberName": "Hulk",
+                "ContactName": "Betty Ross",
+                "SecretIdentity": "Dr. Robert Bruce Banner",
+                "Age": 40,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "Hulk.png",
+                "Description": "Following his accidental exposure to gamma rays during the detonation of an experimental bomb, Banner is physically transformed into the Hulk when subjected to emotional stress, at or against his will, often leading to destructive rampages and conflicts that complicate Banner's civilian life.",
                 "SuperPowers": [
                     "Superhuman Strength",
-                    "Immortality",
                     "Invulnerability",
-                    "Healing Factor",
-                    "Flight"
+                    "Anger Empowerment",
+                    "Regenerative Healing"
                 ],
                 "Abilities": [
-                    "Master hand-to-hand combatant"
-                ],
-                "Gear": [
-                    "Lasso of Truth",
-                    "Indestructible Bracelets",
-                    "Projectile Tiara",
-                    "Sword",
-                    "Shield",
-                    "Invisible Jet"
-                ]
-            },
-            {
-                "MemberId": 24,
-                "Email": "Natalie214@aol.com",
-                "MemberName": "The Flash",
-                "ContactName": "Iris",
-                "SecretIdentity": "Bartholomew 'Barry' Henry Allen",
-                "Age": 10,
-                "Gender": "Male",
-                "Phone": "REDACTED",
-                "Image": "flash.png",
-                "SuperPowers": [
-                    "Ability to move, think and react at immense super-human speeds",
-                    "Superhuman levels of stamina, speed, reflexes, agility, endurance and strength",
-                    "Intangibility through molecular vibration at high velocity",
-                    "Speed Reading",
-                    "Ability to travel through time and various alternate dimensions by running faster than the speed of light"
-                ],
-                "Abilities": [
-                    "None"
+                    "Genius-level Intellect"
                 ],
                 "Gear": [
                     "None"
                 ]
             },
             {
-                "MemberId": 25,
+                "MemberId": 17,
                 "Email": "Natalie214@aol.com",
-                "MemberName": "Green Lantern",
-                "ContactName": "Hal Jordan",
-                "SecretIdentity": "Hal Jordan",
-                "Age": 10,
-                "Gender": "Male",
-                "Phone": "REDACTED",
-                "Image": "green_lantern.png",
-                "SuperPowers": [
-                    "Flight",
-                    "Force Field"
-                ],
-                "Abilities": [
-                    "Trained aircraft pilot"
-                ],
-                "Gear": [
-                    "Power Ring",
-                    "Uniform"
-                ]
-            },
-            {
-                "MemberId": 26,
-                "Email": "Natalie214@aol.com",
-                "MemberName": "Aquaman",
+                "MemberName": "Captain America",
                 "ContactName": "Arthur Curry",
-                "SecretIdentity": "Arthur Curry",
+                "SecretIdentity": "Steven \"Steve\" Rogers",
                 "Age": 10,
                 "Gender": "Male",
                 "Phone": "REDACTED",
-                "Image": "aquaman.png",
+                "Image": "Captain_America_shield.png",
+                "Description": "Captain America is the alter ego of Steve Rogers, a frail young man enhanced to the peak of human perfection by an experimental serum to aid the United States government's efforts in World War II.",
                 "SuperPowers": [
-                    "Control of Aquatic Life",
                     "Superhuman Strength",
-                    "Accelerated Healing",
+                    "Regenerative Healing",
                     "Super-fast Swimming"
                 ],
                 "Abilities": [
-                    "None"
+                    "Skilled Hand-to-Hand Combatant"
                 ],
                 "Gear": [
-                    "Trident of Poseidon"
+                    "Vibranium-steel alloy Shield"
                 ]
             },
             {
-                "MemberId": 27,
+                "MemberId": 18,
                 "Email": "Natalie214@aol.com",
-                "MemberName": "Martian Manhunter",
-                "ContactName": "J'onn J'onzz",
-                "SecretIdentity": "John Jones",
+                "MemberName": "Black Panther",
+                "ContactName": "Ororo Munroe",
+                "SecretIdentity": "T'Challa",
                 "Age": 10,
                 "Gender": "Male",
                 "Phone": "REDACTED",
-                "Image": "Martian_Manhunter.png",
+                "Image": "Black_Panther.png",
+                "Description": "The Black Panther is the ceremonial title given to the chief of the Panther Tribe of the advanced African nation of Wakanda. In the distant past, a meteorite made of the vibration-absorbing mineral vibranium crashed in Wakanda, and was unearthed.",
                 "SuperPowers": [
-                    "Superhuman endurance",
+                    "Superhuman Endurance",
+                    "Superhuman Strength"
+                ],
+                "Abilities": [
+                    "Genius-level Intellect",
+                    "Skilled Hand-to-Hand Combatant"
+                ],
+                "Gear": [
+                    "Vibranium Suit"
+                ]
+            }
+        ]
+    },
+    {
+        "TeamId": 5,
+        "TeamName": "Legion of Doom",
+        "League": "Villains",
+        "ManagerName": "Lex Luthor",
+        "ManagerPhone": "888-888-8888",
+        "ManagerEmail": "LexLuthor78@doommail.com",
+        "MaxTeamMembers": 15,
+        "MinMemberAge": 1,
+        "MaxMemberAge": 17,
+        "TeamGender": "Any",
+        "Members": [
+            {
+                "MemberId": 19,
+                "Email": "LexLuthor78@doommail.com",
+                "MemberName": "Lex Luthor",
+                "ContactName": "Lena Luthor",
+                "SecretIdentity": "Alexander Joseph \"Lex\" Luthor",
+                "Age": 60,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "LexLuthor.png",
+                "Description": "Lex is portrayed as a wealthy, power-mad business magnate, ingenious engineer, philanthropist to the city of Metropolis, and one of the most intelligent people in the world. A well-known public figure, he is the owner of a conglomerate called LexCorp. He is intent on ridding the world of the alien Superman, whom Lex Luthor views as an obstacle to his plans and as a threat to the very existence of humanity.",
+                "SuperPowers": [
+                    "None"
+                ],
+                "Abilities": [
+                    "Genius-level Intellect",
+                    "Expert Engineer",
+                    "Skilled Hand-to-Hand Combatant"
+                ],
+                "Gear": [
+                    "High-tech Warsuit"
+                ]
+            },
+            {
+                "MemberId": 20,
+                "Email": "Natalie214@aol.com",
+                "MemberName": "Bizarro",
+                "ContactName": "Bizarro Lois",
+                "SecretIdentity": "Bizarro #1",
+                "Age": 10,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "Bizarro.png",
+                "Description": "Superman's arch-foe Lex Luthor recreates the \"duplicating ray\" and uses it on the hero, hoping to control the duplicate. The Bizarro that is created, however, is confused, stating: \"Me not human... me not creature... me not even animal! Me unhappy! Me don't belong in world of living people! Me don't know difference between right and wrong — good and evil!",
+                "SuperPowers": [
                     "Superhuman Strength",
+                    "Superhuman Endurance",
+                    "Superhuman Vision",
+                    "Superhuman Breath",
                     "Superhuman Speed",
-                    "Shapeshifting",
-                    "Invisibility",
+                    "Invulnerability",
+                    "Regenerative Healing",
                     "Flight"
                 ],
                 "Abilities": [
-                    "Genius-level intellect",
-                    "Photographic memory"
+                    "None"
+                ],
+                "Gear": [
+                    "Bizarro's Suit"
+                ]
+            },
+            {
+                "MemberId": 21,
+                "Email": "Natalie214@aol.com",
+                "MemberName": "Riddler",
+                "ContactName": "Mary Marvel",
+                "SecretIdentity": "Edward Nigma",
+                "Age": 10,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "Riddler.png",
+                "Description": "The Riddler has an obsession with riddles, puzzles, and word games. He delights in over-stating his \"intellectual superiority\" and on forewarning both Batman and the police of his capers by sending them complex clues.",
+                "SuperPowers": [
+                    "None"
+                ],
+                "Abilities": [
+                    "Genius-level Intellect",
+                    "Expert Criminal Mastermind",
+                    "Skilled Engineer",
+                    "Skilled Computer Programmer",
+                    "Utilizes Complex Riddles"
                 ],
                 "Gear": [
                     "None"
@@ -522,29 +571,86 @@
         ]
     },
     {
-        "TeamId": 116,
-        "TeamName": "Dog",
+        "TeamId": 6,
+        "TeamName": "Injustice League",
         "League": "Villains",
-        "ManagerName": "Ajj",
+        "ManagerName": "Catwoman",
         "ManagerPhone": "888-888-8888",
-        "ManagerEmail": "ajman@jmanil.com",
-        "MaxTeamMembers": 10,
-        "MinMemberAge": 1,
-        "MaxMemberAge": 17,
-        "TeamGender": "Any",
-        "Members": []
-    },
-    {
-        "TeamId": 118,
-        "TeamName": "Cat",
-        "League": "Villains",
-        "ManagerName": "Ajj",
-        "ManagerPhone": "888-888-8888",
-        "ManagerEmail": "aj@jmail.com",
+        "ManagerEmail": "Catwoman40@injusticemail.com",
         "MaxTeamMembers": 15,
         "MinMemberAge": 1,
         "MaxMemberAge": 17,
         "TeamGender": "Any",
-        "Members": []
+        "Members": [
+            {
+                "MemberId": 19,
+                "Email": "Catwoman40@injusticemail.com",
+                "MemberName": "Catwoman",
+                "ContactName": "Helena",
+                "SecretIdentity": "Selina Kyle",
+                "Age": 31,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "Catwoman.png",
+                "Description": "When she is 13 years old, Selina discovers that the detention center's administrator has been embezzling funds, and she confronts her. In an attempt to cover up her crime, the administrator puts Selina in a bag and drops her in a river to drown (like a cat). She escapes and returns to the orphanage, where she steals documents, then steals the administrator's diamond necklace and escapes from the orphanage.",
+                "SuperPowers": [
+                    "None"
+                ],
+                "Abilities": [
+                    "Expert Burglar",
+                    "Skilled Gymnast",
+                    "Skilled Hand-to-Hand Combatant"
+                ],
+                "Gear": [
+                    "Bullwhips",
+                    "Sharp Retractable Claws"
+                ]
+            },
+            {
+                "MemberId": 20,
+                "Email": "Natalie214@aol.com",
+                "MemberName": "Penguin",
+                "ContactName": "Oswald Chesterfield Cobblepot",
+                "SecretIdentity": "Oswald Chesterfield Cobblepot",
+                "Age": 10,
+                "Gender": "Male",
+                "Phone": "REDACTED",
+                "Image": "Penguin.png",
+                "Description": "The Penguin is a Gotham City mobster who fancies himself a \"gentleman of crime\", often wearing a monocle, top hat, and tuxedo. The character is a short, obese man with a long nose, and he uses high-tech umbrellas as weapons.",
+                "SuperPowers": [
+                    "None"
+                ],
+                "Abilities": [
+                    "Expert Criminal Mastermind",
+                    "Master Armed Combatant"
+                ],
+                "Gear": [
+                    "Weaponized Umbrellas"
+                ]
+            }
+        ]
+    },
+    {
+        "TeamId": 123,
+        "TeamName": "Turtles",
+        "League": "Lil-Supers",
+        "ManagerName": "AjT",
+        "ManagerPhone": "888-888-8888",
+        "ManagerEmail": "aj@jmail.com",
+        "MaxTeamMembers": 12,
+        "MinMemberAge": 1,
+        "MaxMemberAge": 17,
+        "TeamGender": "Female",
+        "Members": [
+            {
+                "MemberId": 143,
+                "Email": "Natalie214@aol.com",
+                "MemberName": "22 The Flash",
+                "ContactName": "a jj",
+                "Age": 16,
+                "Gender": "Female",
+                "Phone": "888-888-8888"
+            }
+        ]
     }
 ]

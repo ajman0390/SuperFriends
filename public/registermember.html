@@ -155,8 +155,15 @@
             <!-- Member's SuperPowers -->
             <div class="col-md-5">
               <label for="membersuperpowers" class="col-form-label">Member's SuperPowers</label>
-              <select class="form-control" id="membersuperpowers" name="membersuperpowers">
+              <!-- <select class="form-control" id="membersuperpowers" name="membersuperpowers">
                 <option value="zero" selected>Any</option>
+              </select> -->
+
+              <select name="membersuperpowers" multiple>
+                <option value="Fly">Fly</option>
+                <option value="Speed">Speed</option>
+                <option value="Strength">Strength</option>
+                <option value="Angry">Angry</option>
               </select>
 
               <!-- Member's SuperPowers List -->
@@ -174,10 +181,8 @@
         </fieldset> <!-- / of Member Powers Dataset -->
 
         <!-- errorMsg Row -->
-        <div class="form-row">
-          <div class="text-left col">
-            <p id="errorMsg"></p>
-          </div>
+        <div id="errorMsgDiv">
+          <ul id="errorMessages"></ul>
         </div>
 
         <!-- Form Add and Reset Btns -->
@@ -205,6 +210,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="scripts/registermember.js"></script>
+  <script src="scripts/validate.js"></script>
 </body>
 
 </html>

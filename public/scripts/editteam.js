@@ -18,24 +18,26 @@ $(function () {
             $("#teamLeague").val(teamObj.League);
             $("#managerName").val(teamObj.ManagerName);
             $("#managerPhone").val(teamObj.ManagerPhone);
-            $("#managerEmail").val(teamObj.ManagerEmail);
-            $("#maxTeamMembers").val(teamObj.MaxTeamMembers);
+            $("#manageremail").val(teamObj.ManagerEmail);
+            $("#maxteammembers").val(teamObj.MaxTeamMembers);
             $("#minAge").val(teamObj.MinMemberAge);
             $("#maxAge").val(teamObj.MaxMemberAge);
             $("#teamGender").val(teamObj.TeamGender);
 
             $("#editTeamBtn").on("click", changeBtns);
 
-            $("#updateTeamBtn").on("click", function() {
-                $.ajax({
-                    url: "/api/teams", // your api url
-                    data: $("#editTeamForm").serialize(),
-                    method: "PUT", // method is any HTTP method
-                })
-                    .done(function() {
-                        alert("Editing Team");
-                        location.href = "details.html?TeamId=" + TeamId;
-                    });
+            $("#updateTeamBtn").on("click", function () {
+                if (validateTeamForm()) {
+                    $.ajax({
+                        url: "/api/teams", // your api url
+                        data: $("#editTeamForm").serialize(),
+                        method: "PUT", // method is any HTTP method
+                    })
+                        .done(function () {
+                            alert("Editing Team");
+                            location.href = "details.html?TeamId=" + TeamId;
+                        });
+                }
             });
             //$("#deleteTeamBtn").on("click", deleteForm);
 
@@ -65,11 +67,11 @@ function sendForm() {
         data: $("#editTeamForm").serialize(),
         method: "PUT", // method is any HTTP method
     })
-        .done(function() {
+        .done(function () {
             alert("Editing Team");
             location.href = "details.html?TeamId=" + TeamId;
         });
-    
+
     // } else {
     //     return;
     // }
