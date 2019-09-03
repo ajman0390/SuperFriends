@@ -484,7 +484,8 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 		ContactName: req.body.contactname,
 		Age: Number(req.body.age),
         Gender: req.body.gender,
-        Phone: req.body.phone
+        Phone: req.body.phone,
+        Superpower: req.body.membersuperpowers
     };
 
     //console.log("Performing member validation...")
@@ -545,7 +546,8 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 		ContactName: req.body.contactname,
 		Age: Number(req.body.age),
         Gender: req.body.gender,
-        Phone: req.body.phone
+        Phone: req.body.phone,
+        Superpower: req.body.membersuperpowers
     };
 
     //console.log("Performing member validation...")
@@ -583,6 +585,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
     match.Age = Number(req.body.age);
     match.Gender = req.body.gender;
     match.Phone = req.body.phone;
+    match.Superpower = req.body.membersuperpowers;
 
     // make sure edit doesn't violate team rules
 

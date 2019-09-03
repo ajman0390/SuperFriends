@@ -45,6 +45,9 @@ function validateTeamForm() {
 }
 
 function validateMemberForm() {
+    const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+    const phonePattern = /^[2-9]\d{2}-\d{3}-\d{4}$/
+
     let errorArray = [];
     if ($("#membername").val().trim() == "") {
         errorArray[errorArray.length] = "Please enter a valid Member Name"
@@ -63,15 +66,17 @@ function validateMemberForm() {
     }
     if ($("#email").val().trim() == "") {
         errorArray[errorArray.length] = "Please enter a valid Member Email"
-    }
-    const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
-    if (emailPattern.test($("#email"))) {
+    } else if (emailPattern.test($("#email"))) {
         errorArray[errorArray.length] = "Please enter a valid Member Email"
     }
 
     if ($("#phone").val().trim() == "") {
         errorArray[errorArray.length] = "Please enter a valid Member Phone Number"
+    } else if (phonePattern.test($("#phone"))) {
+        errorArray[errorArray.length] = "Please enter a valid Member Phone Number"
     }
+    
+    
 
     if (errorArray.length == 0) {
         return true;

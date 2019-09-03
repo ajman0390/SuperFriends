@@ -20,7 +20,7 @@ $(function () {
                         method: "DELETE",
                         contentType: "application/json",
                         success: function () {
-                            alert("Member deleted!");
+                            alert("Member Deleted!");
                             location.reload();
                         }
                     });

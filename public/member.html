@@ -64,12 +64,12 @@
         <!-- Course ID -->
         <div class="form-group form-row">
           <div class="col">
-            <label for="teamid">Team ID: </label>
-            <input type="number" class="form-control" name="teamid" id="teamid" placeholder="TeamID" readonly>
+            <!-- <label for="teamid">Team ID: </label> -->
+            <input type="hidden" class="form-control" name="teamid" id="teamid" placeholder="TeamID" readonly>
           </div>
           <div class="col">
-              <label for="memberid">Member ID: </label>
-              <input type="number" class="form-control" name="memberid" id="memberid" placeholder="MemberID" readonly>
+              <!-- <label for="memberid">Member ID: </label> -->
+              <input type="hidden" class="form-control" name="memberid" id="memberid" placeholder="MemberID" readonly>
             </div>
         </div>
 
@@ -91,7 +91,10 @@
         <div class="form-group form-row">
             <div class="col">
               <label for="contactname">Member's Age</label>
-              <input type="number" class="form-control" id="age" name="age" placeholder="Member's age" readonly>
+              <!-- <input type="number" class="form-control" id="age" name="age" placeholder="Member's age" readonly> -->
+              <select class="form-control" id="age" name="age" disabled>
+                  <option value="zero">Select Your Age</option>
+                </select>
             </div>
 
             <div class="col">
@@ -130,7 +133,7 @@
         <div class="form-group form-row">
           <div class="col-md-6">
             <label for="membersuperpowers">Member SuperPowers</label>
-            <ul id="membersuperpowersList"></ul>
+            <ul id="membersuperpowers" name="membersuperpowers"></ul>
            
             <!-- <select class="form-control" id="membersuperpowers" name="membersuperpowers" disabled>
                 <option value="zero" selected>Any</option>
@@ -138,17 +141,25 @@
 
               
 
-              <div class="col">
+              <!-- <div class="col">
                   <button type="button" class="btn btn-outline-primary mt-3 hidden" name="updatePowersBtn"
                   id="updatePowersBtn">Update Member SuperPowers</button>
-              </div>
+              </div> -->
           </div>
           
         </div>
 
-        <div class="form-row">
-          <div class="text-left col">
-            <p id="errorMsg"></p>
+        <div class="form-group form-row justify-content-center">
+            <div class="col-md-5">
+                <select id="membersuperpowersSelect" class="hidden" multiple>
+                  </select>
+            </div>
+          </div>
+
+
+        <!-- errorMsg Row -->
+        <div id="errorMsgDiv">
+            <ul id="errorMessages"></ul>
           </div>
           
           <!-- Form Add and Reset Btns -->
@@ -182,6 +193,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="scripts/member.js"></script>
+  <script src="scripts/validate.js"></script>
 </body>
 
 </html>

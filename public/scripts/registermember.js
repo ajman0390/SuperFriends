@@ -14,6 +14,12 @@ $(function () {
       $("#teamLeague").append("<option value='" + leagueObjs[i].Code + "'>" + leagueObjs[i].Name + "</option>");
     }
 
+    // Age Dropdown
+    for (let i = 1; i < 101; i++) {
+      let newOption = $("<option>", { value: i, text: i });
+      $("#age").append(newOption);
+  }
+
   });
 
   let teamObj;
@@ -58,7 +64,5 @@ function createPowersList(teamObj) {
 
     }
     });
-
-
 
 }

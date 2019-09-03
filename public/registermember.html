@@ -100,7 +100,10 @@
           <!-- Member Age -->
           <div class="col">
             <label for="contactname">New Member's Age</label>
-            <input type="number" class="form-control" id="age" name="age" placeholder="Member's age">
+            <!-- <input type="number" class="form-control" id="age" name="age" placeholder="Member's age"> -->
+            <select class="form-control" id="age" name="age">
+                <option value="zero">Select Your Age</option>
+              </select>
           </div>
 
           <!-- Member Gender -->
@@ -139,7 +142,7 @@
           <!-- Member Phone -->
           <div class="col">
             <label for="phone">Member's Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Phone">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="123-456-7899">
           </div>
         </div>
 
@@ -154,29 +157,24 @@
 
             <!-- Member's SuperPowers -->
             <div class="col-md-5">
-              <label for="membersuperpowers" class="col-form-label">Member's SuperPowers</label>
-              <!-- <select class="form-control" id="membersuperpowers" name="membersuperpowers">
-                <option value="zero" selected>Any</option>
-              </select> -->
+                <label for="membersuperpowers" class="col-form-label">Member's SuperPowers</label>
+            </div>
+          </div>
 
-              <select name="membersuperpowers" multiple>
-                <option value="Fly">Fly</option>
-                <option value="Speed">Speed</option>
-                <option value="Strength">Strength</option>
-                <option value="Angry">Angry</option>
-              </select>
-
-              <!-- Member's SuperPowers List -->
-              <ul id="membersuperpowersList"></ul>
-
-              <!-- Update Member SuperPowers Btn -->
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary mt-3 hidden" name="updatePowersBtn"
-                  id="updatePowersBtn">Update Member SuperPowers</button>
+          <div class="form-group form-row justify-content-center">
+              <div class="col-md-5">
+                  <select id="membersuperpowers" name="membersuperpowers" multiple>
+                    </select>
               </div>
             </div>
 
-          </div>
+            <div class="form-group form-row justify-content-center">
+                <label for="imgUpload" class="col-form-label">Member's imgUpload</label>
+                <div class="col-md-5">
+                    <input type="file" name="memberPic" id="imgUpload" accept="image/*">
+                </div>
+            </div>
+            
 
         </fieldset> <!-- / of Member Powers Dataset -->
 
