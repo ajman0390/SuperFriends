@@ -1,15 +1,18 @@
 "use strict";
 
 $(function () {
-    let leagueObjs;
+    let leaguesObj;
     $.getJSON("/api/leagues",
         function (data) {
-            leagueObjs = data;
+            leaguesObj = data;
 
-            // Create Input Category Dropdown list
-            const legLen = leagueObjs.length;
+            // Create Leauges Dropdown list
+            const legLen = leaguesObj.length;
             for (let i = 0; i < legLen; i++) {
-                $("#inputTeamDropdown").append("<option value='" + leagueObjs[i].Code + "'>" + leagueObjs[i].Name + "</option>")
+                $("#inputTeamDropdown").append($("<option>", {
+                    value: leaguesObj[i].Code,
+                    text: leaguesObj[i].Name
+                }));
             }
 
             // Age Dropdown
@@ -18,6 +21,7 @@ $(function () {
                 $("#Age").append(newOption);
             }
 
+            // On Leagues Dropdown Change
             $("#inputTeamDropdown").on("change", function () {
                 if ($("#inputTeamDropdown").val() == "zero") {
                     clearTable();
@@ -37,7 +41,7 @@ $(function () {
             });
 
             $("#addTeamBtn").on("click", function () {
-                window.location.assign("/registerteam.html?TeamId=" );
+                window.location.assign("/registerteam.html?TeamId=");
             });
         })
 });
@@ -74,28 +78,42 @@ function createTableHead() {
     $("#teamSearchTable thead").append("<tr>", {
         title: ``
     });
-    $("#teamSearchTable thead tr").append($("<th>", {text: "Team Name"}))
-        .append($("<th>", {text: "Team Manager"}))
-        .append($("<th>", {text: "Details"}));
-        $("#teamSearchTable").append($("<tbody>", {id: "tblbody"}));     
+    $("#teamSearchTable thead tr").append($("<th>", { text: "Team Name" }))
+        .append($("<th>", { text: "Team Manager" }))
+        .append($("<th>", { text: "Details" }));
+    $("#teamSearchTable").append($("<tbody>", { id: "tblbody" }));
 }
 
 /*
 * This function to create rows in Table
 */
 function createRow(teamObjs) {
-    
 
-    let tableRow =
-        "<tr data-toggle='popover' title='" + teamObjs.TeamName + "'><td>" +
-        teamObjs.TeamName +
-        "</td><td>" +
-        teamObjs.ManagerName +
-        "</td>" +
-        "<td><a href='details.html?TeamId=" +
-        teamObjs.TeamId +
-        "'>Details</a></td></tr>";
-    $("#tblbody").append(tableRow);
+    // let tableRow =
+    //     "<tr data-toggle='popover' title='" + teamObjs.TeamName + "'><td>" +
+    //     teamObjs.TeamName +
+    //     "</td><td>" +
+    //     teamObjs.ManagerName +
+    //     "</td>" +
+    //     "<td><a href='details.html?TeamId=" +
+    //     teamObjs.TeamId +
+    //     "'>Details</a></td></tr>";
+
+    $("#tblbody").append($("<tr>", { 
+        title: teamObjs.TeamName
+    }));
+    $("#tblbody tr:last").append($("<td>", {
+        text: teamObjs.TeamName
+    }));
+    $("#tblbody tr:last").append($("<td>", {
+        text: teamObjs.ManagerName
+    }));
+    $("#tblbody tr:last").append($("<td>"));
+    $("#tblbody tr td:last").append($("<a>", {
+        href: "details.html?TeamId=" +
+        teamObjs.TeamId,
+        text: "Details"
+    }));
     $("#teamSearchTable").show();
 };;
 

@@ -39,12 +39,18 @@ $(function () {
     */
     $("#updateMemberBtn").on("click",
         function () {
-            // POST to server with student input data, send user back to details.html
-            $.post("/api/teams/" + TeamId + "/members", $("#memberForm").serialize(),
-                function (data) {})
-            window.location.assign("/details.html?TeamId=" + TeamId);
-
+            $.ajax({
+                url: "/api/teams/" + TeamId + "/members", // your api url
+                data: $("#memberForm").serialize(),
+                method: 'PUT', // method is any HTTP method
+                success: function () {
+                    alert("Updating Member");
+                    document.location.href = "details.html?TeamId=" + TeamId;
+                }
+            });
         });
+
+        
 
 
     $("#cancelBtn").on("click", function () {

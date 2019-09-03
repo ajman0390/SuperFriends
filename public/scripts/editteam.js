@@ -13,8 +13,6 @@ $(function () {
         function (data) {
             teamObj = data;
 
-            
-
             $("#teamId").val(teamObj.TeamId);
             $("#teamName").val(teamObj.TeamName);
             $("#teamLeague").val(teamObj.League);
@@ -28,7 +26,17 @@ $(function () {
 
             $("#editTeamBtn").on("click", changeBtns);
 
-            $("#updateTeamBtn").on("click", sendForm);
+            $("#updateTeamBtn").on("click", function() {
+                $.ajax({
+                    url: "/api/teams", // your api url
+                    data: $("#editTeamForm").serialize(),
+                    method: "PUT", // method is any HTTP method
+                })
+                    .done(function() {
+                        alert("Editing Team");
+                        location.href = "details.html?TeamId=" + TeamId;
+                    });
+            });
             //$("#deleteTeamBtn").on("click", deleteForm);
 
         });
@@ -50,34 +58,36 @@ function changeBtns() {
 
 function sendForm() {
     //let validationResult = validateForm();
-    if (1 == 0) {
-        //on the "save" / register button click
-        $.ajax({
-            url: '/api/teams/', // your api url
-            data: $("#editTeamForm").serialize(),
-            method: 'PUT', // method is any HTTP method
-            success: function () {
-                alert("Working");
-                document.location.href = "details.html?TeamId=" + TeamId;
-            }
+    // if (1 == 0) {
+    //on the "save" / register button click
+    $.ajax({
+        url: "/api/teams", // your api url
+        data: $("#editTeamForm").serialize(),
+        method: "PUT", // method is any HTTP method
+    })
+        .done(function() {
+            alert("Editing Team");
+            location.href = "details.html?TeamId=" + TeamId;
         });
-    } else {
-        return;
-    }
+    
+    // } else {
+    //     return;
+    // }
 }
 
 function createDropDown() {
-    let leagueObjs;
+    let leaguesObj;
     $.getJSON("/api/leagues",
         function (data) {
-            leagueObjs = data;
-            // Create Input Category Dropdown list
-            const legLen = leagueObjs.length;
+            leaguesObj = data;
+
+            // Create Leauges Dropdown list
+            const legLen = leaguesObj.length;
             for (let i = 0; i < legLen; i++) {
-                $("#teamLeague").append("<option>", {
-                    value: leagueObjs[i].Name,
-                    text: leagueObjs[i].Name 
-                });
+                $("#teamLeague").append($("<option>", {
+                    value: leaguesObj[i].Code,
+                    text: leaguesObj[i].Name
+                }));
             }
         })
 }

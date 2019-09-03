@@ -12,26 +12,43 @@ $(function () {
             createTeamDetailsCard(teamObj, TeamId);
             createMemberCards(teamObj, TeamId);
 
-        })
+            // Delete Member Button
+            for (let i = 0; i < teamObj.Members.length; i++) {
+                $("#deleteMember" + teamObj.Members[i].MemberId).on("click", function () {
+                    $.ajax({
+                        url: "/api/teams/" + TeamId + "/members/" + teamObj.Members[i].MemberId,
+                        method: "DELETE",
+                        contentType: "application/json",
+                        success: function () {
+                            alert("Member deleted!");
+                            location.reload();
+                        }
+                    });
 
-    $('#addMemberBtn').on('click', function () {
-        window.location.assign("/registermember.html?TeamId=" + TeamId); 
-    });
+                })
+            }
 
-    // Delete Team
-    for (let i = 0; i < teamObj.length; i++){
-        $("#deleteTeam" + teamObj[i].TeamId).on("click", function () {
-            $.ajax({
-                url: "/api/teams/" + teams[i].TeamId,
-                method: "DELETE",
-                success: function () {
-                    alert("Updated!");
-                }
-            });
-            location.href = "index.html";
+                // Delete Team
+                $("#deleteTeam" + TeamId).on("click", function () {
+                    $.ajax({
+                        url: "/api/teams/" + TeamId,
+                        method: "DELETE",
+                        success: function () {
+                            alert("Deleted Team!");
+                            window.location.assign("/teams.html?TeamId=");
+                        }
+                    });
+                });
+
+                $('#addMemberBtn').on('click', function () {
+                    window.location.assign("/registermember.html?TeamId=" + TeamId);
+                });
+
+
+            
         });
-    }
-})
+});
+
 
 function createTeamDetailsCard(teamObj, TeamId) {
 
@@ -48,7 +65,7 @@ function createTeamDetailsCard(teamObj, TeamId) {
 
     let editLink = `<a href="${uri}" class="btn btn-sm btn-outline-primary">Edit</a>`
     $("#editBtnDiv").append(editLink);
-    let deleteLink = `<a href="#" id="deleteTeam${TeamId}" class="btn btn-sm btn-outline-danger">Delete</a>`
+    let deleteLink = `<a id="deleteTeam${TeamId}" class="btn btn-sm btn-outline-danger">Delete</a>`
     $("#deleteBtnDiv").append(deleteLink);
 
     $('#serviceCard').delay('10').fadeIn();
@@ -71,7 +88,7 @@ function createMemberCard(teamMember, TeamId) {
 
     let memberCard = `
     <div class="col-md-4 ">
-        <div class="card mb-4 shadow-sm " id="membercard${teamMember.MemberName}">
+        <div class="card mb-4 shadow-sm membercard" id="membercard${teamMember.MemberName}">
             <div class="card-body card-block">
 
                 <h3 class="card-title text-center">${teamMember.MemberName}</h3>
@@ -107,7 +124,7 @@ function createDetailsTable(teamObjs, TeamId) {
     createRow("Team Gender", teamObjs.TeamGender);
 
     // create Details Link
-    let regLink = "<a href='register.html?TeamId=" +
+    let regLink = "<a href='registermember.html?TeamId=" +
         TeamId +
         "'class='btn btn-outline-primary btn-lg' id='registerBtn'>Register</a>";
     $("#regDiv").append(regLink);
@@ -119,4 +136,3 @@ function createRow(title, value) {
     let row = "<tr><td class='titleTbl'>" + title + '</td><td>' + value + '</td></tr>';
     $("#tblbody").append(row);
 }
-

@@ -63,8 +63,10 @@
 
           <!-- New Member ID -->
           <div class="col">
-            <label for="memberid">Member ID: </label>
-            <input type="number" class="form-control" name="memberid" id="memberid" placeholder="MemberID" readonly>
+            <label for="teamLeague">League</label>
+            <select class="form-control" id="teamLeague" name="leaguecode" disabled>
+              <option value="zero">Team League</option>
+            </select>
           </div>
 
         </div>
@@ -75,7 +77,7 @@
           <!-- New Member Name -->
           <div class="col">
             <label for="membername">New Member Name</label>
-            <input type="text" class="form-control" id="membername" name="membername" placeholder="Member Name" readonly
+            <input type="text" class="form-control" id="membername" name="membername" placeholder="Member Name"
               minlength="2" maxlength="35">
           </div>
         </div>
@@ -87,7 +89,7 @@
           <div class="col">
             <label for="secretidentity">New Member's Secret Identity</label>
             <input type="text" class="form-control" id="secretidentity" name="secretidentity"
-              placeholder="Member's Secret Identity" readonly>
+              placeholder="Member's Secret Identity">
           </div>
 
         </div>
@@ -98,13 +100,13 @@
           <!-- Member Age -->
           <div class="col">
             <label for="contactname">New Member's Age</label>
-            <input type="number" class="form-control" id="age" name="age" placeholder="Member's age" readonly>
+            <input type="number" class="form-control" id="age" name="age" placeholder="Member's age">
           </div>
 
           <!-- Member Gender -->
           <div class="col">
             <label for="gender">Member Gender</label>
-            <select class="form-control" id="gender" name="gender" disabled>
+            <select class="form-control" id="gender" name="gender">
               <option value="Any" selected>Any</option>
               <option value="Female">Female</option>
               <option value="Male">Male</option>
@@ -120,7 +122,7 @@
           <div class="col">
             <label for="contactname">Member's Contact Name</label>
             <input type="text" class="form-control" id="contactname" name="contactname"
-              placeholder="Member's Contact Name" readonly>
+              placeholder="Member's Contact Name">
           </div>
         </div>
 
@@ -130,14 +132,14 @@
           <!-- Member Email -->
           <div class="col">
             <label for="email">Member's Email</label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Email" readonly>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
           </div>
 
 
           <!-- Member Phone -->
           <div class="col">
             <label for="phone">Member's Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Phone" readonly>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Phone">
           </div>
         </div>
 
@@ -153,7 +155,7 @@
             <!-- Member's SuperPowers -->
             <div class="col-md-5">
               <label for="membersuperpowers" class="col-form-label">Member's SuperPowers</label>
-              <select class="form-control" id="membersuperpowers" name="membersuperpowers" disabled>
+              <select class="form-control" id="membersuperpowers" name="membersuperpowers">
                 <option value="zero" selected>Any</option>
               </select>
 
@@ -180,11 +182,7 @@
 
         <!-- Form Add and Reset Btns -->
         <div class="text-right col" id="memberBtnDiv">
-          <button type="button" class="btn btn-outline-success hidden" name="regBtn" id="regBtn">Register</button>
-          <button type="button" class="btn btn-outline-primary" name="editMemberBtn" id="editMemberBtn">Add
-            Member</button>
-          <button type="button" class="btn btn-outline-primary hidden" name="addMemberBtn" id="addMemberBtn">Add
-            Member</button>
+          <button type="button" class="btn btn-outline-success" name="regBtn" id="regMemberBtn">Register</button>
           <button type="button" class="btn btn-outline-danger" id="resetBtn">Reset</button>
           <button type="button" class="btn btn-outline-warning" id="cancelBtn">Cancel</button>
         </div>
