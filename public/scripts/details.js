@@ -4,10 +4,25 @@ $(function () {
     let urlParams = new URLSearchParams(location.search);
     let TeamId = urlParams.get("TeamId");
 
+    createDropDown();
+
     let teamObj;
     $.getJSON("/api/teams/" + TeamId,
         function (data) {
             teamObj = data;
+
+            console.log(teamObj.League)
+
+            $("#teamId").val(teamObj.TeamId);
+            $("#teamName").val(teamObj.TeamName);
+            $("#teamLeague").val(teamObj.League);
+            $("#managerName").val(teamObj.ManagerName);
+            $("#managerPhone").val(teamObj.ManagerPhone);
+            $("#manageremail").val(teamObj.ManagerEmail);
+            $("#maxteammembers").val(teamObj.MaxTeamMembers);
+            $("#minAge").val(teamObj.MinMemberAge);
+            $("#maxAge").val(teamObj.MaxMemberAge);
+            $("#teamGender").val(teamObj.TeamGender);
 
             createTeamDetailsCard(teamObj, TeamId);
             createMemberCards(teamObj, TeamId);
@@ -29,13 +44,13 @@ $(function () {
             }
 
                 // Delete Team
-                $("#deleteTeam" + TeamId).on("click", function () {
+                $("#deleteTeam").on("click", function () {
                     $.ajax({
                         url: "/api/teams/" + TeamId,
                         method: "DELETE",
                         success: function () {
                             alert("Deleted Team!");
-                            window.location.assign("/teams.html?TeamId=");
+                            window.location.assign("/teams.html");
                         }
                     });
                 });
@@ -43,6 +58,16 @@ $(function () {
                 $('#addMemberBtn').on('click', function () {
                     window.location.assign("/registermember.html?TeamId=" + TeamId);
                 });
+
+                // cancel/back button 
+    $("#editTeamBtn").on("click", function () {
+        window.location.assign("/editteam.html?TeamId=" + TeamId);
+    });
+
+    // cancel/back button 
+    $("#cancelBtn").on("click", function () {
+        window.location.assign("/teams.html");
+    });
 
 
             
@@ -88,17 +113,17 @@ function createMemberCard(teamMember, TeamId) {
 
     let memberCard = `
     <div class="col-md-4 ">
-        <div class="card mb-4 shadow-sm membercard" id="membercard${teamMember.MemberName}">
+        <div class="card mb-4 shadow-sm membercard" id="membercard${teamMember.MemberId}">
             <div class="card-body card-block">
 
                 <h3 class="card-title text-center">${teamMember.MemberName}</h3>
             
-                <img class="card-img-top memberImgs" id="card${teamMember.MemberName}Img" src="img/${teamMember.Image}" alt="${teamMember.MemberName} Image">
+                <img class="card-img-top memberImgs" id="card${teamMember.MemberId}Img" src="img/${teamMember.Image}" alt="${teamMember.MemberName} Image">
                 <p class="card-text">${teamMember.Description}</p>
                 
                 <div class="card-bottom d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" id="view${teamMember.MemberName}Btn" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" id="view${teamMember.MemberId}Btn" class="btn btn-sm btn-outline-secondary">View</button>
                         <a href=${uri} class="btn btn-sm btn-outline-secondary">Edit</a>
                         <a href="#" id="deleteMember${teamMember.MemberId}" class="btn btn-sm btn-outline-secondary">Delete</a>
                     </div>
@@ -111,24 +136,24 @@ function createMemberCard(teamMember, TeamId) {
     $("#memberCardDiv").append(memberCard);
 }
 
+function createDropDown() {
+    let leaguesObj;
+    $.getJSON("/api/leagues",
+        function (data) {
+            leaguesObj = data;
 
-function createDetailsTable(teamObjs, TeamId) {
-
-    // create rows
-    createRow("Team ID", teamObjs.TeamId);
-    createRow("Team Name", teamObjs.TeamName);
-    createRow("Team League", teamObjs.League);
-    createRow("Team Max TeamMembers", teamObjs.MaxTeamMembers);
-    createRow("Team Min Age", teamObjs.MinMemberAge);
-    createRow("Team Max Age", teamObjs.MaxMemberAge);
-    createRow("Team Gender", teamObjs.TeamGender);
-
-    // create Details Link
-    let regLink = "<a href='registermember.html?TeamId=" +
-        TeamId +
-        "'class='btn btn-outline-primary btn-lg' id='registerBtn'>Register</a>";
-    $("#regDiv").append(regLink);
+            // Create Leauges Dropdown list
+            const legLen = leaguesObj.length;
+            for (let i = 0; i < legLen; i++) {
+                $("#teamLeague").append($("<option>", {
+                    value: leaguesObj[i].Code,
+                    text: leaguesObj[i].Name
+                }));
+            }
+        })
 }
+
+
 /*
 * This funciton to create rows in Table
 */

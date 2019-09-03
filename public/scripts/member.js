@@ -14,10 +14,6 @@ $(function () {
         function (data) {
             memberObj = data;
 
-            
-
-            console.log(memberObj);
-
             $("#teamid").val(TeamId);
             $("#memberid").val(memberObj.MemberId);
             $("#membername").val(memberObj.MemberName);

@@ -159,6 +159,8 @@ function isValidMember(member)
        return false; 
     if (member.Age == undefined || isNaN(member.Age))
        return false; 
+    if (member.SecretIdentity == undefined || member.SecretIdentity.trim() == "")
+       return false;
     if (member.Gender == undefined || member.Gender.trim() == "")
        return false; 
     if (member.Gender != "Any" && member.Gender != "Male" && member.Gender != "Female")
@@ -485,6 +487,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 		Age: Number(req.body.age),
         Gender: req.body.gender,
         Phone: req.body.phone,
+        SecretIdentity: req.body.secretidentity,
         Superpower: req.body.membersuperpowers
     };
 
@@ -547,6 +550,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 		Age: Number(req.body.age),
         Gender: req.body.gender,
         Phone: req.body.phone,
+        SecretIdentity: req.body.secretidentity,
         Superpower: req.body.membersuperpowers
     };
 
