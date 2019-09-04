@@ -16,10 +16,10 @@ $(function () {
             }
 
             // Age Dropdown
-            for (let i = 1; i < 101; i++) {
-                let newOption = $("<option>", { value: i, text: i });
-                $("#Age").append(newOption);
-            }
+            // for (let i = 1; i < 101; i++) {
+            //     let newOption = $("<option>", { value: i, text: i });
+            //     $("#Age").append(newOption);
+            // }
 
             // On Leagues Dropdown Change
             $("#inputTeamDropdown").on("change", function () {
@@ -74,13 +74,21 @@ $("#showAllBtn").on("click", function () {
 * This function to creates thead and tbody in Teams Table
 */
 function createTableHead() {
-    $("#teamSearchTable").append($("<thead>", {class: "text-center"}));
+    $("#teamSearchTable").append($("<thead>", {
+        class: "text-center"
+    }));
     $("#teamSearchTable thead").append("<tr>", {
         class: "text-center"
     });
-    $("#teamSearchTable thead tr").append($("<th>", { text: "Team Name" }))
-        .append($("<th>", { text: "Team Manager" }))
-        .append($("<th>", { text: "Details" }));
+    $("#teamSearchTable thead tr").append($("<th>", { 
+        text: "Team Name" 
+    }))
+        .append($("<th>", { 
+            text: "Team Manager" 
+        }))
+        .append($("<th>", { 
+            text: "Details" 
+        }));
     $("#teamSearchTable").append($("<tbody>", { id: "tblbody", class: "text-center" }));
 }
 

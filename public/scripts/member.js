@@ -3,6 +3,8 @@ $(function () {
     let TeamId = urlParams.get("TeamId");
     let MemberId = urlParams.get("MemberId");
 
+    createPowersMultiList();
+
     // Age Dropdown
     for (let i = 1; i < 101; i++) {
         let newOption = $("<option>", { value: i, text: i });
@@ -25,8 +27,11 @@ $(function () {
             $("#phone").val(memberObj.Phone);
             $("#age").val(memberObj.Age);
             $("#gender").val(memberObj.Gender);
+            $("#membersuperpowers").val(memberObj.Superpower)
 
-            createPowersList(memberObj);
+            //createPowersList(memberObj);
+            // var list = $('#membersuperpowers li').map(function(){ return $(this).text(); });
+            // console.log(list)
 
         });
 
@@ -73,29 +78,31 @@ function createPowersList(memberObj) {
         
         console.log(memberObj.Superpower[i]);
 
-        $("#membersuperpowers").append($("<li>", {
-            class: "mt-3",
-            text: memberObj.Superpower[i],
-            name: "membersuperpowers"
-        }));
+        // $("#membersuperpowers").append($("<li>", {
+        //     class: "mt-3",
+        //     text: memberObj.Superpower[i],
+        //     name: "membersuperpowers"
+        // }));
 
-        $("#membersuperpowers li:last").append($("<button>", {
-            class: "delPowerBtn btn btn-outline-danger btn-sm m-2 hidden",
-            text: "Delete",
-            id: "deletePowerBtn" + i
-        }));
+        // $("#membersuperpowers li:last").append($("<button>", {
+        //     class: "delPowerBtn btn btn-outline-danger btn-sm m-2 hidden",
+        //     text: "Delete",
+        //     id: "deletePowerBtn" + i
+        // }));
 
-        $("#deletePowerBtn" + i).on("click", function() {
-            $(this).parent('li').remove();
-        });
+        // $("#deletePowerBtn" + i).on("click", function() {
+        //     $(this).parent('li').remove();
+        // });
 
         //memberObj.Superpower[i].val($("#membersuperpowers"))
     }
 
-    createPowersMultiList();
+    createPowersMultiList()
 
     
 }
+
+
 
 function createPowersMultiList() {
 
@@ -105,7 +112,7 @@ function createPowersMultiList() {
         powerObj = data;
   
         for (let k = 0; k < powerObj.length; k++) {
-          $("#membersuperpowersSelect").append($("<option>", {
+          $("#membersuperpowers").append($("<option>", {
             value: powerObj[k],
             text: powerObj[k]
           }));

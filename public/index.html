@@ -2,174 +2,96 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Added CSS file-->
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <!-- Added CSS file-->
+  <link rel="stylesheet" href="css/main.css">
 
-    <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
+  <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="img/favicon.ico" />
-    <title>Explore The Heroes</title>
+  <link rel="icon" href="img/favicon.ico" />
+  <title>Explore The Heroes</title>
 </head>
 
 <body>
 
-    <header>
-        <!-- Start of Nav -->
+  <!-- Start of Nav -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
-        <a class="navbar-brand" href="index.html">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
-          aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarsDefault">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="teams.html">Teams</a>
-            </li>
-    
-          </ul>
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+      aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="teams.html">Teams</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- End of Nav -->
+  </nav>
+
+  <!-- Main Header -->
+  <header class="container-fluid text-center col-12" id="pageContainer">
+      <h1 class="display-2" id="pageHeader">Heroes League</h1>
+  </header>
+
+  <main>
+
+    <!-- Jumbotron -->
+    <div class="container">
+      <div class="jumbotron text-white rounded shadow">
+        <div class="text-center" id="jumboText">
+          <!-- <h1 class="display-4 font-italic">Search Heroes Leagues</h1>
+          <p class="lead my-3 pTop">Register for Heroes Leagues.</p> -->
         </div>
-        <!-- End of Nav -->
-      </nav>
-    </header>
+      </div>
+    </div>
 
-    <main role="main">
+    <div class="container">
+      <div class="row">
+        <div class="text-center col">
+            <h1>Search Heroes Leagues</h1>
+            <hr/>
+        </div>  
+      </div>
 
-        <!-- Carousel -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="img/justice_league.png" class="d-block w-100" alt="justice_league">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/supermanflying.png" class="d-block w-100" alt="supermanflying">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/wonder_woman.jpg" class="d-block w-100" alt="wonder_woman">
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div> <!-- /Carousel -->
+      <!-- Columns of text for the leagues below the jumbotron -->
+      <div class="row" id="leageArea">
+      </div><!-- / Leagues Row -->
 
+      <!-- Search Btn -->
+      <div class="row mt-3">
+        <div class="text-center col">
+          <button type="button" class="btn btn-outline-primary btn-lg" name="showAllBtn" id="searchBtn">Search</button>
+        </div>
+      </div>
 
-        <!-- Marketing messaging and featurettes
-  ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
+    </div><!-- /.container -->
 
-        <div class="container marketing">
+  </main>
 
-            <!-- Columns of text below the carousel -->
-            <div class="row" id="leageArea">
-                
-            </div><!-- /.row -->
-            <div class="row">
-                <!-- Form Add and Reset Btns -->
-          <div class="text-center col">
-                <button type="button" class="btn btn-outline-primary btn-lg" name="showAllBtn" id="searchBtn">Search All</button> 
-              </div>
-            </div>
-
-
-            <!-- START THE FEATURETTES -->
-
-            <!-- <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading" id="top1">First featurette heading. <span class="text-muted">It’ll blow your
-                            mind.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                        focusable="false" role="img" aria-label="Placeholder: 500x500">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                            dy=".3em">500x500</text>
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                            yourself.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                        focusable="false" role="img" aria-label="Placeholder: 500x500">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                            dy=".3em">500x500</text>
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <img src="">
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider"> -->
-
-            <!-- /END THE FEATURETTES -->
-
-        </div><!-- /.container -->
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="container">
-        <hr />
-        <p>&copy; Adam Jacobs - HartCode Academy 2019 Credit to <a href="https://www.wikipedia.org/">Wikipedia</a></p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="scripts/index.js"></script>
+  <!-- FOOTER -->
+  <footer class="container">
+    <hr />
+    <p>&copy; Adam Jacobs - HartCode Academy 2019 Credit to <a href="https://www.wikipedia.org/">Wikipedia</a></p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="scripts/index.js"></script>
 
 </body>
 

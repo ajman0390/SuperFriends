@@ -336,6 +336,7 @@ app.post("/api/teams", urlencodedParser, function (req, res) {
 		MinMemberAge: Number(req.body.minmemberage),
 		MaxMemberAge: Number(req.body.maxmemberage),
         TeamGender: req.body.teamgender,
+        TeamSuperStatus: req.body.teamsuperstatus,
         Members : []
     };
 
@@ -379,6 +380,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 		MinMemberAge: Number(req.body.minmemberage),
 		MaxMemberAge: Number(req.body.maxmemberage),
         TeamGender: req.body.teamgender,
+        TeamSuperStatus: req.body.teamsuperstatus
     };
 
     //console.log("Performing team validation...")
