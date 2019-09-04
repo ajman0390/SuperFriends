@@ -49,7 +49,7 @@
 
   <main class="container ">
 
-    <div class="shadow-lg p-3 mb-5" id="courseSearchDiv">
+    <div class="shadow-lg p-3 mb-5" id="teamSearchDiv">
 
       <!-- Message at top of Form -->
       <h3>Heroes</h3>
@@ -76,32 +76,18 @@
         </div>
       </div>
 
-      <!-- <div class="form-group row">
-      <label for="Age" class="col-sm-2 col-form-label">Age</label>
+      <div class="form-group row">
+      <label for="powers" class="col-sm-2 col-form-label">Super Powers</label>
     <div class="col-md-3">
-      <select class="form-control" id="Age" name="Age">
-        <option value="zero">Select Your Age</option>
+      <select class="form-control selectors" id="powers" name="powers">
+        <option value="Any" selected>Any Powers</option>
+        <option value="Superpowers">Super Powers Only</option>
+        <option value="noSuperpowers">No Super Powers Only</option>
       </select>
     </div>    
-  </div> -->
-
-  <div class="form-group offset-md-2 row">
-      <div class="custom-control custom-radio mr-3 mt-1 mb-4">
-          <input class="custom-control-input" type="radio" name="SuperpowersCheck" id="anySuperpowers" value="Superpowers" checked>
-          <label class="custom-control-label allLabels" for="anySuperpowers">Any</label>
-      </div>
-  <div class="custom-control custom-radio mr-3 mt-1 mb-4">
-      <input class="custom-control-input" type="radio" name="SuperpowersCheck" id="Superpowers" value="Superpowers">
-      <label class="custom-control-label allLabels" for="Superpowers">Super Powers Only</label>
   </div>
-  <div class="custom-control custom-radio mt-1 mb-4 mr-2">
-      <input class="custom-control-input" type="radio" name="SuperpowersCheck" id="NoSuperpowers"
-          value="NoSuperpowers">
-      <label class="custom-control-label allLabels" for="NoSuperpowers">No Super Powers Only</label>
-  </div>
-</div>
 
-      <!-- Table for displaying searched courses -->
+      <!-- Table for displaying searched teams -->
       <div class="container col-md-8" id="teamSearchTableDiv">
         <table class="table table-striped table-hover table-bordered" id="teamSearchTable">
         </table>

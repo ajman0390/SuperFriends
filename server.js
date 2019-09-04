@@ -336,7 +336,7 @@ app.post("/api/teams", urlencodedParser, function (req, res) {
 		MinMemberAge: Number(req.body.minmemberage),
 		MaxMemberAge: Number(req.body.maxmemberage),
         TeamGender: req.body.teamgender,
-        TeamSuperStatus: req.body.teamsuperstatus,
+        SuperStatus: req.body.teamsuperstatus,
         Members : []
     };
 
@@ -380,7 +380,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
 		MinMemberAge: Number(req.body.minmemberage),
 		MaxMemberAge: Number(req.body.maxmemberage),
         TeamGender: req.body.teamgender,
-        TeamSuperStatus: req.body.teamsuperstatus
+        SuperStatus: req.body.teamsuperstatus
     };
 
     //console.log("Performing team validation...")
@@ -490,7 +490,8 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
         Gender: req.body.gender,
         Phone: req.body.phone,
         SecretIdentity: req.body.secretidentity,
-        Superpower: req.body.membersuperpowers
+        Superpower: req.body.membersuperpowers,
+        SuperStatus: req.body.membersuperstatus
     };
 
     //console.log("Performing member validation...")
@@ -553,7 +554,8 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
         Gender: req.body.gender,
         Phone: req.body.phone,
         SecretIdentity: req.body.secretidentity,
-        Superpower: req.body.membersuperpowers
+        Superpower: req.body.membersuperpowers,
+        SuperStatus: req.body.membersuperstatus
     };
 
     //console.log("Performing member validation...")
@@ -592,6 +594,7 @@ app.put("/api/teams", urlencodedParser, function (req, res) {
     match.Gender = req.body.gender;
     match.Phone = req.body.phone;
     match.Superpower = req.body.membersuperpowers;
+    match.SuperStatus = req.body.membersuperstatus;
 
     // make sure edit doesn't violate team rules
 

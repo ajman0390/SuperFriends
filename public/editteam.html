@@ -37,10 +37,6 @@
           <a class="nav-link" href="teams.html">Teams</a>
         </li>
 
-        <li class="nav-item disabled">
-          <a class="nav-link" href="#">Courses</a>
-        </li>
-
       </ul>
     </div>
     <!-- End of Nav -->
@@ -132,8 +128,21 @@
           </div>
 
           <!-- Extra Row -->
-          <div class="form-group row justify-content-center">
+          <div class="form-group offset-md-3 row">
+              <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                  <input class="custom-control-input" type="radio" name="teamsuperstatus" id="anySuperpowers" value="Any">
+                  <label class="custom-control-label allLabels" for="anySuperpowers">Any</label>
+              </div>
+          <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+              <input class="custom-control-input" type="radio" name="teamsuperstatus" id="Superpowers" value="Superpowers">
+              <label class="custom-control-label allLabels" for="Superpowers">Super Powers</label>
           </div>
+          <div class="custom-control custom-radio mt-1 mb-4 mr-2">
+              <input class="custom-control-input" type="radio" name="teamsuperstatus" id="NoSuperpowers"
+                  value="noSuperpowers">
+              <label class="custom-control-label allLabels" for="NoSuperpowers">No Super Powers</label>
+          </div>
+        </div>
 
         </fieldset>
 

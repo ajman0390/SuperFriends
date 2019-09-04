@@ -1,7 +1,9 @@
 "use strict";
 
 function validateTeamForm() {
+    const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
     let errorArray = [];
+
     if ($("#teamName").val().trim() == "") {
         errorArray[errorArray.length] = "Please enter a valid Team Name"
     }
@@ -22,15 +24,15 @@ function validateTeamForm() {
     }
     if ($("#manageremail").val().trim() == "") {
         errorArray[errorArray.length] = "Please enter a valid Team Manager Email"
-    }
-    const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
-    if (emailPattern.test($("#manageremail"))) {
+    } else if (emailPattern.test($("#manageremail"))) {
         errorArray[errorArray.length] = "Please enter a valid Team Manager Email"
     }
 
     if (($("#teamLeague").val().trim() == "") || ($("#teamLeague").val() == "zero")) {
         errorArray[errorArray.length] = "Please select a valid Team League"
     }
+
+    //if (($"#teamsuperstatus"))
 
     if (errorArray.length == 0) {
         return true;

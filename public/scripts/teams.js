@@ -15,30 +15,11 @@ $(function () {
                 }));
             }
 
-            // Age Dropdown
-            // for (let i = 1; i < 101; i++) {
-            //     let newOption = $("<option>", { value: i, text: i });
-            //     $("#Age").append(newOption);
-            // }
+            // Powers Dropdown
+            $("#powers").change(createSearchTable);
 
             // On Leagues Dropdown Change
-            $("#inputTeamDropdown").on("change", function () {
-                if ($("#inputTeamDropdown").val() == "zero") {
-                    clearTable();
-                    return;
-                } else {
-                    clearTable();
-                    createTableHead();
-                    $.getJSON(("/api/teams/byleague/" + $("#inputTeamDropdown").val()),
-                        function (data) {
-                            let teamObjs = data;
-                            let teamLen = teamObjs.length;
-                            for (let i = 0; i < teamLen; i++) {
-                                createRow(teamObjs[i]);
-                            }
-                        });
-                }
-            });
+            $("#inputTeamDropdown").on("change", createSearchTable);
 
             $("#addTeamBtn").on("click", function () {
                 window.location.assign("/registerteam.html?TeamId=");
@@ -54,8 +35,33 @@ function clearTable() {
     $("#teamSearchTable").hide();
 }
 
+function createSearchTable() {
+        if ($("#inputTeamDropdown").val() == "zero") {
+            clearTable();
+            return;
+        } else {
+            clearTable();
+            createTableHead();
+            $.getJSON(("/api/teams/byleague/" + $("#inputTeamDropdown").val()),
+                function (data) {
+                    let teamObjs = data;
+                    let teamLen = teamObjs.length;
+
+                    for (let i = 0; i < teamLen; i++) {
+                        if ($("#powers option:selected").val() == "Any" ) {
+                            console.log(teamObjs[i].SuperStatus)
+                            createRow(teamObjs[i]);
+                        } else if (($("#powers option:selected").val() == "Superpowers" ) && (teamObjs[i].SuperStatus == "Superpowers")) {
+                            createRow(teamObjs[i]);
+                        } else if (($("#powers option:selected").val() == "noSuperpowers" ) && (teamObjs[i].SuperStatus == "noSuperpowers")) {
+                            createRow(teamObjs[i]);
+                        }
+                    }
+                });
+        }
+}
 /*
-* This function shows all course results in the Table
+* This function shows all teams results in the Table
 */
 $("#showAllBtn").on("click", function () {
     clearTable();
@@ -80,16 +86,19 @@ function createTableHead() {
     $("#teamSearchTable thead").append("<tr>", {
         class: "text-center"
     });
-    $("#teamSearchTable thead tr").append($("<th>", { 
-        text: "Team Name" 
+    $("#teamSearchTable thead tr").append($("<th>", {
+        text: "Team Name"
     }))
-        .append($("<th>", { 
-            text: "Team Manager" 
+        .append($("<th>", {
+            text: "Team Manager"
         }))
-        .append($("<th>", { 
-            text: "Details" 
+        .append($("<th>", {
+            text: "Details"
         }));
-    $("#teamSearchTable").append($("<tbody>", { id: "tblbody", class: "text-center" }));
+    $("#teamSearchTable").append($("<tbody>", { 
+        id: "tblbody", 
+        class: "text-center" 
+    }));
 }
 
 /*
@@ -97,7 +106,7 @@ function createTableHead() {
 */
 function createRow(teamObjs) {
 
-    $("#tblbody").append($("<tr>", { 
+    $("#tblbody").append($("<tr>", {
         title: teamObjs.TeamName
     }));
     $("#tblbody tr:last").append($("<td>", {
@@ -111,18 +120,24 @@ function createRow(teamObjs) {
     }));
     $("#tblbody tr td:last").append($("<a>", {
         href: "details.html?TeamId=" +
-        teamObjs.TeamId,
+            teamObjs.TeamId,
         text: "Details"
     }));
     $("#teamSearchTable").show();
-};;
+};
 
 // Reset Btn
 $("#resetBtn").on("click", function () {
     clearTable();
     $("#teamSearchTable").hide();
     $("#inputTeamDropdown").val("zero");
-    $("#Age").val("zero");
+    $("#powers").val("Any");
+    $(function () {
+        let $radios = $('input:radio[value=anySuperpowers]');
+        if ($radios.is(':checked') === false) {
+            $radios.filter('[value=anySuperpowers]').prop('checked', true);
+        }
+    });
 });
 
 

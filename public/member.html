@@ -52,7 +52,7 @@
       <!-- Beginning of Form -->
       <form class="shadow-lg p-3 mb-5" action="#" id="memberForm">
 
-        <!-- Course ID -->
+        <!-- Team ID -->
         <div class="form-group form-row">
           <div class="col">
             <input type="hidden" class="form-control" name="teamid" id="teamid">
@@ -115,6 +115,18 @@
             </div>
           </div>
 
+          <div class="form-group offset-md-2 row">
+          <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+              <input class="custom-control-input" type="radio" name="membersuperstatus" id="Superpowers" value="Superpowers" disabled>
+              <label class="custom-control-label allLabels" for="Superpowers">Super Powers</label>
+          </div>
+          <div class="custom-control custom-radio mt-1 mb-4 mr-2">
+              <input class="custom-control-input" type="radio" name="membersuperstatus" id="NoSuperpowers"
+                  value="noSuperpowers" disabled>
+              <label class="custom-control-label allLabels" for="NoSuperpowers">No Super Powers</label>
+          </div>
+        </div>
+
         
         
         <div class="form-group form-row">
@@ -138,7 +150,7 @@
 
         <div class="form-group form-row justify-content-center">
             <div class="col-md-5">
-                <select id="membersuperpowers" class="" multiple>
+                <select id="membersuperpowers" class="" multiple disabled>
                   </select>
             </div>
           </div>

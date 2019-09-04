@@ -24,6 +24,10 @@ $(function () {
             $("#maxAge").val(teamObj.MaxMemberAge);
             $("#teamGender").val(teamObj.TeamGender);
 
+            console.log(teamObj.SuperStatus)
+
+            $(":radio[value=" + teamObj.SuperStatus + "]").attr('checked',true);
+
             $("#editTeamBtn").on("click", changeBtns);
 
             $("#updateTeamBtn").on("click", function () {
