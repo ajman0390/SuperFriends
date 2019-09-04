@@ -13,6 +13,7 @@ $(function () {
             }
         })
 
+        // Search Btn on click, send user to teams search page
         $("#searchBtn").on("click", function(){
             location.href = "teams.html";
         })

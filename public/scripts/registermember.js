@@ -8,17 +8,20 @@ $(function () {
   $.getJSON("/api/leagues", function (data) {
     let leagueObjs = data;
 
-    // Create Input League Dropdown list
+    // Create Leauges Dropdown list
     const legLen = leagueObjs.length;
     for (let i = 0; i < legLen; i++) {
-      $("#teamLeague").append("<option value='" + leagueObjs[i].Code + "'>" + leagueObjs[i].Name + "</option>");
+      $("#teamLeague").append($("<option>", {
+        value: leagueObjs[i].Code,
+        text: leagueObjs[i].Name
+      }));
     }
 
     // Age Dropdown
     for (let i = 1; i < 101; i++) {
       let newOption = $("<option>", { value: i, text: i });
       $("#age").append(newOption);
-  }
+    }
 
   });
 
@@ -27,42 +30,43 @@ $(function () {
     function (data) {
       teamObj = data;
 
+      // Set Values
       $("#teamLeague").val(teamObj.League);
       $("#teamname").val(teamObj.TeamName);
       createPowersList(teamObj);
 
     });
   $("#regMemberBtn").on("click", function () {
-    if (validateMemberForm()) {
-    $.post("api/teams/" + TeamId + "/members", $("#registerMember").serialize(),
-      function () {
-        alert("Member added!");
-        window.location.href = "details.html?TeamId=" + TeamId; // redirect 
-      });
-
+    if (validateMemberForm(teamObj)) {
+      $.post("api/teams/" + TeamId + "/members", $("#registerMember").serialize(),
+        function () {
+          alert("Member added!");
+          window.location.href = "details.html?TeamId=" + TeamId; // redirect 
+        });
     }
-
   });
 
+  // Cancel Btn
   $("#cancelBtn").on("click", function () {
     window.location.assign("/details.html?TeamId=" + TeamId);
   });
 });
 
-function createPowersList(teamObj) {
-
+/*
+* This function creates the multi select dropdown in the Form 
+*/
+function createPowersList() {
   let powerObj;
   $.getJSON("/api/powers",
     function (data) {
       powerObj = data;
 
-      for (let k = 0; k < powerObj.length; k++) {
+      for (let i = 0; i < powerObj.length; i++) {
         $("#membersuperpowers").append($("<option>", {
-          value: powerObj[k],
-          text: powerObj[k]
+          value: powerObj[i],
+          text: powerObj[i]
         }));
 
-    }
+      }
     });
-
 }

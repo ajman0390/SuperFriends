@@ -16,6 +16,7 @@ $(function () {
         function (data) {
             memberObj = data;
 
+            // Set values
             $("#teamid").val(TeamId);
             $("#memberid").val(memberObj.MemberId);
             $("#membername").val(memberObj.MemberName);
@@ -29,14 +30,10 @@ $(function () {
             $("#gender").val(memberObj.Gender);
             $("#membersuperpowers").val(memberObj.Superpower)
 
-            console.log(memberObj.SuperStatus)
-
             $(":radio[value=" + memberObj.SuperStatus + "]").attr("checked",true);
         });
 
-    $("#teamId").val(TeamId);
-    $("#membername").val(memberid);
-
+    // Change Form Btns
     $("#editMemberBtn").on("click", changeBtns);
 
     /*
@@ -58,13 +55,16 @@ $(function () {
         }
         });
 
+    // Cancel Btn
     $("#cancelBtn").on("click", function () {
         window.location.assign("/details.html?TeamId=" + TeamId);
     });
 });
 
+/*
+* This function creates the multi select dropdown in the Form 
+*/
 function createPowersMultiList() {
-
     let powerObj;
     $.getJSON("/api/powers",
       function (data) {
@@ -81,9 +81,11 @@ function createPowersMultiList() {
   
 }
 
-
+/*
+* This function changes the btns on the Form 
+*/
 function changeBtns() {
-    $("#editMemberBtn").addClass('hidden') //css('display', 'none');
+    $("#editMemberBtn").addClass('hidden') 
     $("#updateMemberBtn").removeClass('hidden');
     $("#resetBtn").removeClass('hidden');
     $("*", "#memberForm").removeAttr('readonly');

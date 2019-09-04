@@ -1,37 +1,43 @@
 "use strict";
 
-$(function() {
+$(function () {
   // Populates dropdown with leagues.
   let leaguesObj;
-    $.getJSON("/api/leagues",
-        function (data) {
-            leaguesObj = data;
+  $.getJSON("/api/leagues",
+    function (data) {
+      leaguesObj = data;
 
-            // Create Leauges Dropdown list
-            const legLen = leaguesObj.length;
-            for (let i = 0; i < legLen; i++) {
-                $("#teamLeague").append($("<option>", {
-                    value: leaguesObj[i].Code,
-                    text: leaguesObj[i].Name
-                }));
-            }
-        }) 
+      // Create Leauges Dropdown list
+      const legLen = leaguesObj.length;
+      for (let i = 0; i < legLen; i++) {
+        $("#teamLeague").append($("<option>", {
+          value: leaguesObj[i].Code,
+          text: leaguesObj[i].Name
+        }));
+      }
+    })
+
+  // Change Btns
   $("#editTeamBtn").on("click", changeBtns);
-  $("#regTeamBtn").on("click", function() {
+  $("#regTeamBtn").on("click", function () {
     if (validateTeamForm()) {
-    $.post("api/teams", $("#regTeamForm").serialize(), function(data) {
-      let postData = JSON.parse(data);
-      location.href = "teams.html?TeamId=" + postData.TeamId;
-    });
-  }     
+      $.post("api/teams", $("#regTeamForm").serialize(), function (data) {
+        let postData = JSON.parse(data);
+        location.href = "teams.html?TeamId=" + postData.TeamId;
+      });
+    }
   });
 
-  $("#cancelBtn").on("click", function() {
+  // Cancel Btn
+  $("#cancelBtn").on("click", function () {
     location.href = "teams.html";
   });
 
 });
 
+/*
+* This function changes the btns on the Form 
+*/
 function changeBtns() {
   $("#editTeamBtn").addClass('hidden') //css('display', 'none');
   $("#regTeamBtn").removeClass('hidden');

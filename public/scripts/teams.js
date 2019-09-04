@@ -36,29 +36,29 @@ function clearTable() {
 }
 
 function createSearchTable() {
-        if ($("#inputTeamDropdown").val() == "zero") {
-            clearTable();
-            return;
-        } else {
-            clearTable();
-            createTableHead();
-            $.getJSON(("/api/teams/byleague/" + $("#inputTeamDropdown").val()),
-                function (data) {
-                    let teamObjs = data;
-                    let teamLen = teamObjs.length;
+    if ($("#inputTeamDropdown").val() == "zero") {
+        clearTable();
+        return;
+    } else {
+        clearTable();
+        createTableHead();
+        $.getJSON(("/api/teams/byleague/" + $("#inputTeamDropdown").val()),
+            function (data) {
+                let teamObjs = data;
+                let teamLen = teamObjs.length;
 
-                    for (let i = 0; i < teamLen; i++) {
-                        if ($("#powers option:selected").val() == "Any" ) {
-                            console.log(teamObjs[i].SuperStatus)
-                            createRow(teamObjs[i]);
-                        } else if (($("#powers option:selected").val() == "Superpowers" ) && (teamObjs[i].SuperStatus == "Superpowers")) {
-                            createRow(teamObjs[i]);
-                        } else if (($("#powers option:selected").val() == "noSuperpowers" ) && (teamObjs[i].SuperStatus == "noSuperpowers")) {
-                            createRow(teamObjs[i]);
-                        }
+                for (let i = 0; i < teamLen; i++) {
+                    if ($("#powers option:selected").val() == "Any") {
+                        console.log(teamObjs[i].SuperStatus)
+                        createRow(teamObjs[i]);
+                    } else if (($("#powers option:selected").val() == "Superpowers") && (teamObjs[i].SuperStatus == "Superpowers")) {
+                        createRow(teamObjs[i]);
+                    } else if (($("#powers option:selected").val() == "noSuperpowers") && (teamObjs[i].SuperStatus == "noSuperpowers")) {
+                        createRow(teamObjs[i]);
                     }
-                });
-        }
+                }
+            });
+    }
 }
 /*
 * This function shows all teams results in the Table
@@ -95,9 +95,9 @@ function createTableHead() {
         .append($("<th>", {
             text: "Details"
         }));
-    $("#teamSearchTable").append($("<tbody>", { 
-        id: "tblbody", 
-        class: "text-center" 
+    $("#teamSearchTable").append($("<tbody>", {
+        id: "tblbody",
+        class: "text-center"
     }));
 }
 
@@ -137,15 +137,5 @@ $("#resetBtn").on("click", function () {
         if ($radios.is(':checked') === false) {
             $radios.filter('[value=anySuperpowers]').prop('checked', true);
         }
-    });
-});
-
-
-
-// Popovers
-$(document).ready(function () {
-    $('[data-toggle="popover"]').popover({
-        placement: 'top',
-        trigger: 'hover'
     });
 });

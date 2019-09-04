@@ -1,6 +1,6 @@
 "use strict";
 
-function validateTeamForm() {
+function validateTeamForm(teamObj) {
     const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
     let errorArray = [];
 
@@ -32,7 +32,10 @@ function validateTeamForm() {
         errorArray[errorArray.length] = "Please select a valid Team League"
     }
 
-    //if (($"#teamsuperstatus"))
+    // if ($("#maxteammembers").val() < teamObj.Members.length) {
+    //     errorArray[errorArray.length] = "Please enter a vaild number of Max Team Members " +  teamObj.Members.length + " members are registered for this team";
+    // }
+    
 
     if (errorArray.length == 0) {
         return true;
@@ -46,7 +49,7 @@ function validateTeamForm() {
     }
 }
 
-function validateMemberForm() {
+function validateMemberForm(teamObj) {
     const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
     const phonePattern = /^[2-9]\d{2}-\d{3}-\d{4}$/
 
@@ -77,6 +80,13 @@ function validateMemberForm() {
     } else if (phonePattern.test($("#phone"))) {
         errorArray[errorArray.length] = "Please enter a valid Member Phone Number"
     } 
+
+    if (($("#age").val() < teamObj.MinMemberAge) || ($("#age").val() > teamObj.MaxMemberAge) ) {
+        errorArray[errorArray.length] = "Please enter a Member Age within " +  teamObj.MinMemberAge + " and " + teamObj.MaxMemberAge;
+    }
+    if (teamObj.MaxTeamMembers <= teamObj.Members.length) {
+        errorArray[errorArray.length] = "Team allows " +  teamObj.MaxTeamMembers + " on this team";
+    }
 
     if (errorArray.length == 0) {
         return true;
