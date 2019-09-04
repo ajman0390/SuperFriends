@@ -23,8 +23,6 @@ $(function () {
             $("#maxAge").val(teamObj.MaxMemberAge);
             $("#teamGender").val(teamObj.TeamGender);
 
-            console.log(teamObj.SuperStatus)
-
             $(function() {
                 let $radios = $('input:radio');
                 if($radios.is(':checked') === false) {
@@ -76,8 +74,6 @@ $(function () {
             $("#cancelBtn").on("click", function () {
                 window.location.assign("/teams.html");
             });
-
-
 
         });
 });

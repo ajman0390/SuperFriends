@@ -49,7 +49,6 @@ function createSearchTable() {
 
                 for (let i = 0; i < teamLen; i++) {
                     if ($("#powers option:selected").val() == "Any") {
-                        console.log(teamObjs[i].SuperStatus)
                         createRow(teamObjs[i]);
                     } else if (($("#powers option:selected").val() == "Superpowers") && (teamObjs[i].SuperStatus == "Superpowers")) {
                         createRow(teamObjs[i]);
