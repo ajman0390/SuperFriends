@@ -6,8 +6,19 @@ h1, h2, h3, h4, h6 {
     font-family: 'Cinzel', serif;
 }
 
+#titleContainer, #pageContainer {
+    color: white;
+    background-color: black;
+    padding-top: 4rem;
+    padding-bottom: .5rem;
+}
+
 #categoryName {
     font-size: 1.5em;
+}
+
+#errorMessages {
+    background-color: rgb(255, 204, 204);
 }
 
 .card-title {
@@ -44,7 +55,8 @@ footer p {
 .jumbotron {
     border-radius: 25px;
     margin: 20px;
-    background-image: url("../img/supermanflying.png");
+    height: 20em;
+    background-image: url("../img/Superheroes-and-Villains.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%, 50%;
@@ -54,7 +66,7 @@ footer p {
 .hidden {
     display: none;
 }
-#managerData, #memberData, #memberPowersData {
+#managerData, #memberData, #memberPowersData, #searchFilter {
     border: thin solid;
     padding: 10px;
 }
@@ -68,52 +80,6 @@ footer p {
 #cardDiv {
     margin-top: 20px;
 }
-#serviceCard {
-    padding-top: 2.5em;;
-    width: 18rem;
-    text-align: center;
-    color: #FFFFFF;
-    width: 100%;
-    height: 19.5em; 
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-    background-color: rgba(152, 231, 255, 0.788); 
-}
-.flipper {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-bottom: 10px;
-    perspective: 1000px;
-}
-
-/* Flip the pane when hovered, Add a hover effect (blue/grey shadow) */
-#cardDiv:hover .card {
-    transform: rotateY(180deg);
-    box-shadow: 0 0 15px 1px rgba(10, 44, 53, 0.884);
-}
-
-.front, .back {
-    width: 100%;
-    padding: 15px;
-    position: absolute;
-    backface-visibility: hidden;
-    top: 0;
-    left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-    z-index: 2;
-    height: 100%;
-}
-
-/* back, initially hidden pane */
-.back {
-    transform: rotateY(180deg);
-    height: 100%;
-    background-color: rgb(91, 198, 230)
-}
 
 #topSection {
     padding: 5px;
@@ -126,6 +92,7 @@ footer p {
 
 .membercard {
     height: 830px;
+    /* height: 45vw; */
 }
 .card-bottom {
     bottom: 5px;
@@ -135,6 +102,7 @@ footer p {
 .card-text {
     margin-top: 20px; 
     margin-bottom: 20px;
+    /* font-size: .94rem; */
 }
 
 .col-form-label, #memberBtnDiv, #managerInfoLegend {
@@ -161,4 +129,3 @@ fieldset {
         width: 12em;
     }
 }
-

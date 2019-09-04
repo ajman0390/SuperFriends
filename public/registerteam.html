@@ -63,16 +63,16 @@
           </legend>
 
           <!-- Team Info Form Row 1 -->
-          <div class="form-group row justify-content-center">
+          <!-- <div class="form-group row justify-content-center"> -->
 
             <!-- Team ID -->
-              <div class="col-sm-2">
+              <!-- <div class="col-sm-2">
                 <label for="teamId" class="col col-form-label">Team ID</label>
                 <input type="text" class="form-control mx-auto" id="teamId" name="teamId" placeholder="Team  ID"
                   readonly>
-              </div>
+              </div> -->
 
-          </div>
+          <!-- </div> -->
 
 
           <!-- Team Info Form Row 2 -->
@@ -127,9 +127,22 @@
 
           </div>
 
-          <!-- Extra Row -->
-          <div class="form-group row justify-content-center">
-          </div>
+          <!-- Super Powers Radio Row -->
+          <div class="form-group offset-md-2 row">
+              <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                      <input class="custom-control-input" type="radio" name="teamsuperstatus" id="anySuperpowers" value="Any" disabled>
+                      <label class="custom-control-label allLabels" for="anySuperpowers">Any</label>
+                  </div>
+              <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                  <input class="custom-control-input" type="radio" name="teamsuperstatus" id="Superpowers" value="Superpowers" disabled>
+                  <label class="custom-control-label allLabels" for="Superpowers">Super Powers Only</label>
+              </div>
+              <div class="custom-control custom-radio mt-1 mb-4 mr-2">
+                  <input class="custom-control-input" type="radio" name="teamsuperstatus" id="noSuperpowers"
+                      value="noSuperpowers" disabled>
+                  <label class="custom-control-label allLabels" for="noSuperpowers">No Super Powers Only</label>
+              </div>
+            </div>
 
         </fieldset>
 
@@ -184,6 +197,9 @@
         <div id="errorMsgDiv">
           <ul id="errorMessages"></ul>
         </div>
+        <!-- Extra Row -->
+        <div class="form-group row justify-content-center">
+        </div>
 
       </form>
     </section>
@@ -203,6 +219,7 @@
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="scripts/registerteam.js"></script>
+  <script src="scripts/validate.js"></script>
 
 </body>
 

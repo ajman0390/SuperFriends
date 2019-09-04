@@ -13,40 +13,48 @@ $(function () {
         function (data) {
             teamObj = data;
 
+            // Set values in Form
             $("#teamId").val(teamObj.TeamId);
             $("#teamName").val(teamObj.TeamName);
             $("#teamLeague").val(teamObj.League);
             $("#managerName").val(teamObj.ManagerName);
             $("#managerPhone").val(teamObj.ManagerPhone);
-            $("#managerEmail").val(teamObj.ManagerEmail);
-            $("#maxTeamMembers").val(teamObj.MaxTeamMembers);
+            $("#manageremail").val(teamObj.ManagerEmail);
+            $("#maxteammembers").val(teamObj.MaxTeamMembers);
             $("#minAge").val(teamObj.MinMemberAge);
             $("#maxAge").val(teamObj.MaxMemberAge);
             $("#teamGender").val(teamObj.TeamGender);
 
+            $(":radio[value=" + teamObj.SuperStatus + "]").attr('checked',true);
+
+            // Change Btns
             $("#editTeamBtn").on("click", changeBtns);
 
-            $("#updateTeamBtn").on("click", function() {
-                $.ajax({
-                    url: "/api/teams", // your api url
-                    data: $("#editTeamForm").serialize(),
-                    method: "PUT", // method is any HTTP method
-                })
-                    .done(function() {
-                        alert("Editing Team");
-                        location.href = "details.html?TeamId=" + TeamId;
-                    });
+            // Send Form after validation to edit a team
+            $("#updateTeamBtn").on("click", function () {
+                if (validateTeamForm(teamObj)) {
+                    $.ajax({
+                        url: "/api/teams", // your api url
+                        data: $("#editTeamForm").serialize(),
+                        method: "PUT", // method is any HTTP method
+                    })
+                        .done(function () {
+                            alert("Editing Team");
+                            location.href = "details.html?TeamId=" + TeamId;
+                        });
+                }
             });
-            //$("#deleteTeamBtn").on("click", deleteForm);
-
         });
 
-    // cancel/back button 
+    // Cancel Btn 
     $("#cancelBtn").on("click", function () {
         window.location.assign("/details.html?TeamId=" + TeamId);
     });
 });
 
+/*
+* This function changes the btns on the Form 
+*/
 function changeBtns() {
     $("#editTeamBtn").addClass('hidden') //css('display', 'none');
     $("#updateTeamBtn").removeClass('hidden');
@@ -56,25 +64,24 @@ function changeBtns() {
     $("*", "#editTeamForm").attr('disabled', false);
 }
 
+/*
+* This function sends the submitted form to edit team api after form validation 
+*/
 function sendForm() {
-    //let validationResult = validateForm();
-    // if (1 == 0) {
-    //on the "save" / register button click
     $.ajax({
         url: "/api/teams", // your api url
         data: $("#editTeamForm").serialize(),
         method: "PUT", // method is any HTTP method
     })
-        .done(function() {
+        .done(function () {
             alert("Editing Team");
             location.href = "details.html?TeamId=" + TeamId;
         });
-    
-    // } else {
-    //     return;
-    // }
 }
 
+/*
+* This function creates the Leauges Dropdown list 
+*/
 function createDropDown() {
     let leaguesObj;
     $.getJSON("/api/leagues",
@@ -91,8 +98,6 @@ function createDropDown() {
             }
         })
 }
-
-
 
 /* 
 * Reset Btn to clear member inputfields

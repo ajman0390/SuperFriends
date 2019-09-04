@@ -42,29 +42,20 @@
     <!-- End of Nav -->
   </nav>
 
-  <!-- Main jumbotron -->
-  <header>
-
-    <div class="container">
-      <div class="py-3"><br /></div>
-      <div class="jumbotron text-white rounded shadow">
-        <div class="text-center" id="jumboText">
-          <h1 class="display-4 font-italic">Explore The Courses</h1>
-          <p class="lead my-3 pTop">Search for Courses.</p>
-        </div>
-      </div>
-    </div>
-
+  <!-- Main Header -->
+  <header class="container-fluid text-center mb-3 col-12" id="pageContainer">
+      <h1 class="display-2" id="pageHeader">Heroes League</h1>
   </header>
 
   <main class="container ">
 
-    <div class="shadow-lg p-3 mb-5" id="courseSearchDiv">
+    <div class="shadow-lg p-3 mb-5" id="teamSearchDiv">
 
       <!-- Message at top of Form -->
       <h3>Heroes</h3>
       <small>A variety of Heroes.</small>
       <hr />
+      
 
       <!-- Search Dropdown -->
       <div class="form-group row">
@@ -80,21 +71,23 @@
           <div class="text-center col">
             <button type="button" class="btn btn-outline-primary btn-lg" name="showAllBtn" id="showAllBtn">Show All</button> 
             <button type="reset" class="btn btn-outline-danger btn-lg" id="resetBtn">Reset</button>
+            <button type="button" class="btn btn-outline-warning btn-lg text-right" id="addTeamBtn">Add Team</button>
           </div>
         </div>
       </div>
 
       <div class="form-group row">
-      <label for="Age" class="col-sm-2 col-form-label">Age</label>
+      <label for="powers" class="col-sm-2 col-form-label">Super Powers</label>
     <div class="col-md-3">
-      <select class="form-control" id="Age" name="Age">
-        <option value="zero">Select Your Age</option>
+      <select class="form-control selectors" id="powers" name="powers">
+        <option value="Any" selected>Any Powers</option>
+        <option value="Superpowers">Super Powers Only</option>
+        <option value="noSuperpowers">No Super Powers Only</option>
       </select>
-    </div>
-    <button type="reset" class="btn btn-outline-warning btn-lg text-right" id="addTeamBtn">Add Team</button>
+    </div>    
   </div>
 
-      <!-- Table for displaying searched courses -->
+      <!-- Table for displaying searched teams -->
       <div class="container col-md-8" id="teamSearchTableDiv">
         <table class="table table-striped table-hover table-bordered" id="teamSearchTable">
         </table>

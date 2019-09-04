@@ -37,10 +37,6 @@
           <a class="nav-link" href="teams.html">Teams</a>
         </li>
 
-        <li class="nav-item disabled">
-          <a class="nav-link" href="#">Courses</a>
-        </li>
-
       </ul>
     </div>
     <!-- End of Nav -->
@@ -67,16 +63,16 @@
           </legend>
 
           <!-- Team Info Form Row 1 -->
-          <div class="form-group row justify-content-center">
+          <div class="form-group row justify-content-center"> 
 
             <!-- Team ID -->
               <div class="col-sm-2">
                 <label for="teamId" class="col col-form-label">Team ID</label>
                 <input type="text" class="form-control mx-auto" id="teamId" name="teamid" placeholder="Team  ID"
                   readonly>
-              </div>
+              </div> 
 
-          </div>
+          </div> 
 
 
           <!-- Team Info Form Row 2 -->
@@ -132,8 +128,21 @@
           </div>
 
           <!-- Extra Row -->
-          <div class="form-group row justify-content-center">
+          <div class="form-group offset-md-3 row">
+              <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                  <input class="custom-control-input" type="radio" name="teamsuperstatus" id="anySuperpowers" value="Any">
+                  <label class="custom-control-label allLabels" for="anySuperpowers">Any</label>
+              </div>
+          <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+              <input class="custom-control-input" type="radio" name="teamsuperstatus" id="Superpowers" value="Superpowers">
+              <label class="custom-control-label allLabels" for="Superpowers">Super Powers</label>
           </div>
+          <div class="custom-control custom-radio mt-1 mb-4 mr-2">
+              <input class="custom-control-input" type="radio" name="teamsuperstatus" id="NoSuperpowers"
+                  value="noSuperpowers">
+              <label class="custom-control-label allLabels" for="NoSuperpowers">No Super Powers</label>
+          </div>
+        </div>
 
         </fieldset>
 
@@ -166,7 +175,7 @@
               <!-- Team Manager Email -->
               <div class="col">
                   <label for="manageremail" class="col-form-label">Email</label>
-                <input type="text" class="form-control" name="manageremail" id="managerEmail" placeholder="Team Manager Email" readonly>
+                <input type="text" class="form-control" name="manageremail" id="manageremail" placeholder="Team Manager Email" readonly>
               </div>
 
             </div>
@@ -184,24 +193,14 @@
         <button type="button" class="btn btn-outline-warning btn-lg" id="cancelBtn">Cancel</button>
       </div>
       <hr />
-      
-
-      <!-- Message at top of Table -->
-      <h3>Members</h3>
-      <div class="row"></div>
-
-        <!-- Table for displaying members -->
-        <div class="container col-md-6" id="memberDisplayDiv">
-          <table class="table table-striped table-hover table-bordered" id="memberTable">
-            <tbody id="tblbodyMember"></tbody>
-          </table>
-        </div>
-
-        <div id="errorMsgDiv">
-          <ul id="errorMessages"></ul>
-        </div>
 
     </form>
+
+    <div id="errorMsgDiv">
+      <ul id="errorMessages"></ul>
+    </div>
+
+    </section>
 
   </main> <!-- /container -->
 
@@ -218,7 +217,7 @@
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="scripts/editteam.js"></script>
-
+  <script src="scripts/validate.js"></script>
 </body>
 
 </html>

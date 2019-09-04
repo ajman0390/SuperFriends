@@ -3,13 +3,20 @@ $(function () {
     let TeamId = urlParams.get("TeamId");
     let MemberId = urlParams.get("MemberId");
 
+    createPowersMultiList();
+
+    // Age Dropdown
+    for (let i = 1; i < 101; i++) {
+        let newOption = $("<option>", { value: i, text: i });
+        $("#age").append(newOption);
+    }
+
     let memberObj;
     $.getJSON("/api/teams/" + TeamId + "/members/" + MemberId,
         function (data) {
             memberObj = data;
 
-            console.log(memberObj);
-
+            // Set values
             $("#teamid").val(TeamId);
             $("#memberid").val(memberObj.MemberId);
             $("#membername").val(memberObj.MemberName);
@@ -21,17 +28,13 @@ $(function () {
             $("#phone").val(memberObj.Phone);
             $("#age").val(memberObj.Age);
             $("#gender").val(memberObj.Gender);
+            $("#membersuperpowers").val(memberObj.Superpower)
 
-
-            createPowersList(memberObj);
-
+            $(":radio[value=" + memberObj.SuperStatus + "]").attr("checked",true);
         });
 
-    $("#teamId").val(TeamId);
-    $("#membername").val(memberid);
-
+    // Change Form Btns
     $("#editMemberBtn").on("click", changeBtns);
-    $("#updatePowersBtn").on("click", addPowers);
 
     /*
     * This function to post student inputs 
@@ -39,6 +42,7 @@ $(function () {
     */
     $("#updateMemberBtn").on("click",
         function () {
+            if (validateMemberForm()) {
             $.ajax({
                 url: "/api/teams/" + TeamId + "/members", // your api url
                 data: $("#memberForm").serialize(),
@@ -48,104 +52,50 @@ $(function () {
                     document.location.href = "details.html?TeamId=" + TeamId;
                 }
             });
+        }
         });
 
-        
-
-
+    // Cancel Btn
     $("#cancelBtn").on("click", function () {
         window.location.assign("/details.html?TeamId=" + TeamId);
     });
 });
 
-function validateForm(TeamId) {
-
-    // Validate student name and email inputs 
-    const namePattern = /[-'a-zA-Z]/
-
-    if (!(namePattern.test($("#studentname").val().trim()))) {
-        $("#errorMsg").html("Please fill out name field");
-        $("#errorMsg").show();
-        $("#studentname").focus();
-        return;
-    } else {
-        if ($("#email").val() == "") {
-            $("#errorMsg").html("Please fill out all fields");
-            $("#errorMsg").show();
-            $("#email").focus();
-            return;
-        } else {
-            const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
-
-            if (emailPattern.test($("#email").val())) {
-                $("#errorMsg").hide();
-            } else {
-                $("#errorMsg").html("Please enter valid email address");
-                $("#errorMsg").show();
-                $("#email").focus();
-                return;
-            }
-        }
-    }
-}
-
-function createPowersList(memberObj) {
-
+/*
+* This function creates the multi select dropdown in the Form 
+*/
+function createPowersMultiList() {
     let powerObj;
     $.getJSON("/api/powers",
-        function (data) {
-            powerObj = data;
-
-            for (let k = 0; k < powerObj.length; k++) {
-                let dropItem = `<option value=${powerObj[k]}>${powerObj[k]}</option>`;
-                $("#membersuperpowers").append(dropItem);
-            }
-        });
-        
-    const powersLen = memberObj.SuperPowers.length;
-    for (let j = 0; j < powersLen; j++) {
-        let delPowerBtn = `<button type="button" class="delPowerBtn btn btn-outline-danger btn-sm m-2 hidden" id="deletePowerBtn` + [j] + `">Delete</button>`;
-        console.log(memberObj.SuperPowers[j]);
-        
-        let listItem = `<li class="mt-3">${memberObj.SuperPowers[j]}${delPowerBtn}</li>`
-        $("#membersuperpowersList").append(listItem);
-    }
-
-    for (let i = 0; i < powersLen; i++) {
-        // Delete SuperPower in List ~ Ongoing ~
-        $("#deletePowerBtn" + i).on("click", function () {
-            $(this).parent('li').remove();
-        });
-    }
+      function (data) {
+        powerObj = data;
+  
+        for (let k = 0; k < powerObj.length; k++) {
+          $("#membersuperpowers").append($("<option>", {
+            value: powerObj[k],
+            text: powerObj[k]
+          }));
+  
+      }
+      });
+  
 }
 
-function addPowers() {
-    let delPowerBtn = `<button type="button" class="delPowerBtn btn btn-outline-danger btn-sm m-2" id="deletePowerBtn">Delete</button>`;
-
-    if ($("#membersuperpowers").val() != 'zero') {
-        let addedPower = $("#membersuperpowers option:selected").text();
-        let addedPowerListItem = `<li class="mt-3">${addedPower}${delPowerBtn}</li>`;
-        $("#membersuperpowersList").append(addedPowerListItem);
-    } else {
-        return;
-    }
-}
-
-
-
+/*
+* This function changes the btns on the Form 
+*/
 function changeBtns() {
-    $("#editMemberBtn").addClass('hidden') //css('display', 'none');
+    $("#editMemberBtn").addClass('hidden') 
     $("#updateMemberBtn").removeClass('hidden');
     $("#resetBtn").removeClass('hidden');
     $("*", "#memberForm").removeAttr('readonly');
     $("#teamId").attr('readonly', true);
     $("*", "#memberForm").attr('disabled', false);
-    $("#membersuperpowersList li button").removeClass('hidden');
+    $("#membersuperpowers li button").removeClass('hidden');
     $("#updatePowersBtn").removeClass('hidden');
     //$("#membersuperpowersList li").attr('contenteditable', true);
     //$("#membersuperpowersList li").css('background-color', 'white');
 }
-
 
 
 /* 

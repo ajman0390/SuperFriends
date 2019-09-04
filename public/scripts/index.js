@@ -12,8 +12,11 @@ $(function () {
                 $("#leageArea").append("<div class='col-lg-3 text-center'><h2 id=top" + leagueObjs[i].Code + ">" + leagueObjs[i].Name + "</h2><p id=para" + leagueObjs[i].Code + ">" + leagueObjs[i].Description + "</p></div>")
             }
         })
+
+        // Search Btn on click, send user to teams search page
+        $("#searchBtn").on("click", function(){
+            location.href = "teams.html";
+        })
     });
 
-    $("#searchBtn").on("click", function(){
-        location.href = "teams.html";
-    })
+    

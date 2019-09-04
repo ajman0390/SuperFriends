@@ -12,7 +12,7 @@
 
     <!-- Added CSS file-->
     <link rel="stylesheet" href="css/main.css">
-    
+
 
     <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
@@ -33,33 +33,23 @@
 
         <div class="collapse navbar-collapse" id="navbarsDefault">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="courses.html">Courses</a>
-                </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="teams.html">Teams</a>
+                          </li>
 
             </ul>
         </div>
         <!-- End of Nav -->
     </nav>
 
-    <!-- Main jumbotron -->
-    <header>
-
-        <div class="container">
-            <div class="py-3"><br /></div>
-            <div class="jumbotron text-white rounded shadow">
-                <div class="text-center" id="jumboText">
-                    <h1 class="display-4 font-italic">Explore The Team</h1>
-                    <p class="lead my-3 pTop">Team</p>
-                </div>
-            </div>
-        </div>
-
+    <!-- Main Header -->
+  <header class="container-fluid text-center col-12" id="pageContainer">
+        <h1 class="display-2" id="pageHeader">Heroes League</h1>
     </header>
 
     <main class="container ">
 
-        <div class="shadow-lg p-3 mb-5" id="searchForm">
+        <div class="p-3 mb-5" >
 
             <!-- Message at top of Table -->
             <h3>Team Detials</h3>
@@ -67,124 +57,171 @@
             <hr />
 
             <!-- teamContainer Secton -->
-            <section class="container" id="teamContainer">
-                <div class="row">
 
-                    <!-- Start of Card -->
-                    <div class="offset-md-4 col-md-3 flipper" id="cardDiv">
-                        <div class="card" id="serviceCard">
-                            <div class="card-body">
-                                <!-- Front face of card -->
-                                <div class="front">
-                                    <h3 class="card-title" id="cardFront">&nbsp;</h3>
-                                    <p>
-                                        <img class="card-img-top img-fluid" id="cardImg" src="#" alt="#">
-                                    </p>
-                                    <small>(Flip over for more details)</small>
-                                </div>
+            <fieldset id="memberData" class="mt-3 mb-3 mx-auto">
+                <legend id="memberLegend" class="w-50 border border-dark mx-auto text-center">
+                    Team Information
+                </legend>
 
-                                <!-- Back face of card -->
-                                <div class="back">
-                                    <h4 class="card-title" id="cardTitle">&nbsp;</h4>
-                                    <h6 class="card-subtitle mb-2 text-muted" id="cardTime">&nbsp;</h6>
-                                    <p class="card-text" id="cardText1">&nbsp;</p>
-                                    <p class="card-text" id="cardText2">&nbsp;</p>
+                <!-- Team Info Form Row 1 -->
+                <div class="form-group row justify-content-center">
 
-                                    <div class="btn-group row" id="editBtnDiv"></div>
-                                    <div class="card-bottom d-flex justify-content-center">
-                                        
-                                        
-                                        <div class="btn-group" id="deleteBtnDiv"></div>
-                                        <small class="text-muted">Text</small>
-                                    </div>
+                    <!-- Team ID -->
+                    <div class="col-sm-2">
+                        <label for="teamId" class="col col-form-label">Team ID</label>
+                        <input type="text" class="form-control mx-auto" id="teamId" name="teamid" placeholder="Team  ID"
+                            readonly>
+                    </div>
 
-                                </div>
-                            </div> <!-- /cardbody -->
+                </div>
+
+
+                <!-- Team Info Form Row 2 -->
+                <div class="form-group row justify-content-center">
+
+                    <!-- Team Name -->
+                    <div class="col-sm-4">
+                        <label for="teamName" class="col-sm-2 col-form-label">Team Name</label>
+                        <input type="text" class="form-control" id="teamName" name="teamname" placeholder="Team Name"
+                            readonly>
+                    </div>
+
+                    <!-- Team League -->
+                    <div class="col-sm-4">
+                        <label class="col-sm-1 col-form-label" for="teamLeague">League</label>
+                        <select class="form-control" id="teamLeague" name="leaguecode" disabled>
+                            <option value="zero">Team League</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Team Info Form Row 3 -->
+                <div class="form-group row justify-content-center">
+
+                    <!-- Team Max Players -->
+                    <div class="col-sm-2">
+                        <label for="maxteammembers" class="col-sm-2 col-form-label">Max Players</label>
+                        <input type="number" class="form-control " name="maxteammembers" id="maxteammembers"
+                            placeholder="Max Players" readonly>
+                    </div>
+
+                    <!-- Team Min Age -->
+                    <div class="col-sm-2">
+                        <label for="minAge" class="col-sm-2 col-form-label">Min Age</label>
+                        <input type="text" class="form-control" id="minAge" placeholder="Min Age" name="minmemberage"
+                            readonly>
+                    </div>
+
+                    <!-- Team Max Age -->
+                    <div class="col-sm-2">
+                        <label for="maxAge" class="col-sm-1 col-form-label">Max Age</label>
+                        <input type="text" class="form-control" id="maxAge" placeholder="Max Age" name="maxmemberage"
+                            readonly>
+                    </div>
+
+                    <!-- Team Gender -->
+                    <div class="col-sm-2 ">
+                        <label for="teamGender" class="col-sm-1 col-form-label">Team Gender</label>
+                        <select class="form-control" id="teamGender" name="teamgender" disabled>
+                            <option value="Any" selected>Any</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Super Powers Radio Row -->
+                <div class="form-group offset-md-3 row">
+                        <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                                <input class="custom-control-input" type="radio" name="teamsuperstatus" id="anySuperpowers" value="Any" disabled>
+                                <label class="custom-control-label allLabels" for="anySuperpowers">Any</label>
+                            </div>
+                        <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                            <input class="custom-control-input" type="radio" name="teamsuperstatus" id="Superpowers" value="Superpowers" disabled>
+                            <label class="custom-control-label allLabels" for="Superpowers">Super Powers Only</label>
                         </div>
-                    </div> <!-- /Card -->
-                </div>
-            </section>
+                        <div class="custom-control custom-radio mt-1 mb-4 mr-2">
+                            <input class="custom-control-input" type="radio" name="teamsuperstatus" id="noSuperpowers"
+                                value="noSuperpowers" disabled>
+                            <label class="custom-control-label allLabels" for="noSuperpowers">No Super Powers Only</label>
+                        </div>
+                      </div>
 
+            </fieldset>
 
-            <!-- Table for displaying details on searched teams -->
-            <div class="container col-md-8" id="bottomDiv">
+            <div class="container mt-3">
+                <fieldset id="managerData" class="mt-3 mb-3 p-5 mx-auto">
+                    <legend id="managerInfoLegend" class="border border-dark mx-auto text-center w-51">Team Manager
+                        Information
+                    </legend>
 
-                <!-- TODO: Move into JS for dynamic -->
-                <table class="table table-striped table-hover table-bordered" id="teamsDetailTable">
-                    <tbody id="tblbody"></tbody>
-                </table>
+                    <!-- Team Manager Info Form Row 1 -->
+                    <div class="form-group row justify-content-center">
 
-            </div>
+                        <!-- Team Manager Name -->
+                        <div class="col-sm-6">
+                            <label for="managerName" class="col-form-label">Team Manager</label>
+                            <input type="text" class="form-control" id="managerName" placeholder="Team Manager Name"
+                                name="managername" readonly>
+                        </div>
 
-            <!-- Message at top of Table -->
-            <div class="container">
-                <div class="row">
-                    <h3>Team Members</h3>
-                    <div class="text-right col" id="addMemberBtnDiv">
-                        <button type="button" class="btn btn-outline-success" name="addMemberBtn"
-                            id="addMemberBtn">Register</button>
+                        <!-- Team Manager Phone -->
+                        <div class="col-sm-6">
+                            <label for="managerPhone" class="col-form-label">Team Manager Phone</label>
+                            <input type="text" class="form-control" id="managerPhone" placeholder="888-888-8888"
+                                name="managerphone" readonly>
+                        </div>
 
                     </div>
-                </div>
-            </div>
 
-            <!-- Form Add and Reset Btns -->
-            <!-- <div class="row">
-                <div class="text-left col" id="regDiv">
-                </div>
-                <hr />
-            </div> -->
+                    <!-- Team Manager Info Form Row 2 -->
+                    <div class="form-group row justify-content-center">
 
-            <!-- Table for displaying students -->
-            <!-- <div class="container col-md-8" id="studentDisplayDiv">
-                <table class="table table-striped table-hover table-bordered" id="studentTable">
-                    <tbody id="tblbodyStudent"></tbody>
-                </table>
-            </div> -->
+                        <!-- Team Manager Email -->
+                        <div class="col">
+                            <label for="manageremail" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" name="manageremail" id="manageremail"
+                                placeholder="Team Manager Email" readonly>
+                        </div>
 
-            <!-- MemberCard container for displaying members -->
-            <div class="album py-5 ">
-                <div class="container">
-                    <div class="row" id="memberCardDiv">
                     </div>
-                </div>
+
+                </fieldset>
             </div>
         </div>
 
 
-        <!-- <div class="cards">card 1
-                <img src="http://lorempixel.com/gray/200/200/nature/1">
-            </div>
-            <div class="cards">card 2
-                <img src="http://lorempixel.com/gray/200/200/nature/2">
-            </div>
-            <div class="cards">card 3
-                <img src="http://lorempixel.com/200/200/nature/3">
-            </div>
-            <div class="cards">card 4
-                <img src="http://lorempixel.com/gray/200/200/city/1">
-            </div>
-            <div class="cards">card 5
-                <img src="http://lorempixel.com/200/200/city/2">
-            </div>
-            <div class="cards">card 6
-                <img src="http://lorempixel.com/gray/200/200/city/3">
-            </div>
-            <div class="cards">card 7
-                <img src="http://lorempixel.com/gray/200/200/food/1">
-            </div>
-            <div class="cards">card 8
-                <img src="http://lorempixel.com/gray/200/200/food/2">
-            </div>
-            <div class="cards">card 9
-                <img src="http://lorempixel.com/200/200/food/3">
-            </div>
-            <div id="cardClone">
-                <div id="cloneFront">cardclone front</div>
-                <div id="cloneBack">cardclone back</div>
-            </div> -->
+        <!-- Form Add and Reset Btns -->
+      <div class="text-center col">
+            <button type="button" class="btn btn-outline-primary btn-lg" name="editTeamBtn" id="editTeamBtn">Edit
+              Team</button>
+            <button type="button" class="btn btn-outline-danger btn-lg" name="deleteTeam"
+              id="deleteTeam">Delete Team</button>
+            <button type="button" class="btn btn-outline-warning btn-lg" id="cancelBtn">Cancel</button>
+          </div>
+          <hr />
 
+        <!-- Message at top of Table -->
+        <div class="container">
+            <div class="row">
+                <h3>Team Members</h3>
+                <div class="text-right col" id="addMemberBtnDiv">
+                    <button type="button" class="btn btn-outline-success" name="addMemberBtn"
+                        id="addMemberBtn">Register</button>
 
+                </div>
+            </div>
+        </div>
+
+        <!-- MemberCard container for displaying members -->
+        <div class="album py-5 ">
+            <div class="container">
+                <div class="row" id="memberCardDiv">
+                </div>
+            </div>
+        </div>
 
     </main> <!-- /container -->
 

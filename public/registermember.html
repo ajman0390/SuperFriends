@@ -31,9 +31,9 @@
 
     <div class="collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="courses.html">Courses</a>
-        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="teams.html">Teams</a>
+            </li>
 
       </ul>
     </div>
@@ -52,7 +52,7 @@
       <!-- Beginning of Registration Form -->
       <form class="shadow-lg p-3 mb-5" action="#" id="registerMember">
 
-        <!-- Member Form Row 1 -->
+        <!-- Member Form Row -->
         <div class="form-group form-row">
 
           <!-- Team Name -->
@@ -71,7 +71,7 @@
 
         </div>
 
-        <!-- Member Form Row 2 -->
+        <!-- Member Form Row -->
         <div class="form-group form-row">
 
           <!-- New Member Name -->
@@ -82,7 +82,7 @@
           </div>
         </div>
 
-        <!-- Member Form Row 3 -->
+        <!-- Member Form Row -->
         <div class="form-group form-row">
 
           <!-- New Member's Secret Identity -->
@@ -94,13 +94,16 @@
 
         </div>
 
-        <!-- Member Form Row 4 -->
+        <!-- Member Form Row -->
         <div class="form-group form-row">
 
           <!-- Member Age -->
           <div class="col">
             <label for="contactname">New Member's Age</label>
-            <input type="number" class="form-control" id="age" name="age" placeholder="Member's age">
+            <!-- <input type="number" class="form-control" id="age" name="age" placeholder="Member's age"> -->
+            <select class="form-control" id="age" name="age">
+                <option value="zero">Select Your Age</option>
+              </select>
           </div>
 
           <!-- Member Gender -->
@@ -115,7 +118,7 @@
 
         </div>
 
-        <!-- Member Form Row 5 -->
+        <!-- Member Form Row -->
         <div class="form-group form-row">
 
           <!-- Member Contact's Name -->
@@ -126,7 +129,7 @@
           </div>
         </div>
 
-        <!-- Member Form Row 6 -->
+        <!-- Member Form Row -->
         <div class="form-group form-row">
 
           <!-- Member Email -->
@@ -139,7 +142,7 @@
           <!-- Member Phone -->
           <div class="col">
             <label for="phone">Member's Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Member Phone">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="123-456-7899">
           </div>
         </div>
 
@@ -149,42 +152,46 @@
             New Member's Powers
           </legend>
 
-          <!-- Member Form Row 7 -->
+          <div class="form-group offset-md-4 row">
+              <div class="custom-control custom-radio mr-3 mt-1 mb-4">
+                  <input class="custom-control-input" type="radio" name="membersuperstatus" id="Superpowers" value="Superpowers">
+                  <label class="custom-control-label" for="Superpowers">Super Powers</label>
+              </div>
+              <div class="custom-control custom-radio mt-1 mb-4 mr-2">
+                  <input class="custom-control-input" type="radio" name="membersuperstatus" id="NoSuperpowers"
+                      value="noSuperpowers">
+                  <label class="custom-control-label" for="NoSuperpowers">No Super Powers</label>
+              </div>
+            </div>
+
+          <!-- Member Form Row -->
           <div class="form-group form-row justify-content-center">
 
             <!-- Member's SuperPowers -->
             <div class="col-md-5">
-              <label for="membersuperpowers" class="col-form-label">Member's SuperPowers</label>
-              <select class="form-control" id="membersuperpowers" name="membersuperpowers">
-                <option value="zero" selected>Any</option>
-              </select>
-
-              <!-- Member's SuperPowers List -->
-              <ul id="membersuperpowersList"></ul>
-
-              <!-- Update Member SuperPowers Btn -->
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary mt-3 hidden" name="updatePowersBtn"
-                  id="updatePowersBtn">Update Member SuperPowers</button>
-              </div>
+                <label for="membersuperpowers" class="col-form-label">Member's SuperPowers</label>
             </div>
-
           </div>
+
+          <div class="form-group form-row justify-content-center">
+              <div class="col-md-5">
+                  <select id="membersuperpowers" name="membersuperpowers" multiple>
+                    </select>
+              </div>
+            </div>            
 
         </fieldset> <!-- / of Member Powers Dataset -->
 
         <!-- errorMsg Row -->
-        <div class="form-row">
-          <div class="text-left col">
-            <p id="errorMsg"></p>
-          </div>
+        <div id="errorMsgDiv">
+          <ul id="errorMessages"></ul>
         </div>
 
         <!-- Form Add and Reset Btns -->
         <div class="text-right col" id="memberBtnDiv">
-          <button type="button" class="btn btn-outline-success" name="regBtn" id="regMemberBtn">Register</button>
-          <button type="button" class="btn btn-outline-danger" id="resetBtn">Reset</button>
-          <button type="button" class="btn btn-outline-warning" id="cancelBtn">Cancel</button>
+          <button type="button" class="btn btn-outline-success btn-lg" name="regBtn" id="regMemberBtn">Register</button>
+          <!-- <button type="button" class="btn btn-outline-danger" id="resetBtn">Reset</button> -->
+          <button type="button" class="btn btn-outline-warning btn-lg" id="cancelBtn">Cancel</button>
         </div>
 
       </form> <!-- End of Member Registration Form -->
@@ -205,6 +212,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="scripts/registermember.js"></script>
+  <script src="scripts/validate.js"></script>
 </body>
 
 </html>
